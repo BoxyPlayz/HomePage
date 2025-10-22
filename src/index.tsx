@@ -12,8 +12,8 @@ export function App() {
 		<LocationProvider scope="/HomePage">
 			<Header />
 			<Router>
-				<Route path="/" component={Home} />
-				<Route path="/settings" component={Settings} />
+				<Route path="/HomePage/" component={Home} />
+				<Route path="/HomePage/settings" component={Settings} />
 				<Route default component={NotFound} />
 			</Router>
 		</LocationProvider>
