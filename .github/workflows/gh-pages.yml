@@ -1,7 +1,11 @@
 name: Build and Deploy Vite App to GitHub Pages
 
 on:
-  workflow_dispatch:
+    push:
+      branches: 
+        - main
+    workflow_dispatch:
+
 
 permissions:
   contents: read
@@ -33,8 +37,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: './dist'
+      - name: Debug Info
+        run: |
+          echo "Listing files in the artifact:"
+          dir ./dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
