@@ -9,7 +9,7 @@ const NotFound = lazy(() => import('./pages/_404'));
 
 export function App() {
 	return (
-		<LocationProvider>
+		<LocationProvider scope="/HomePage">
 			<Header />
 			<Router>
 				<Route path="/" component={Home} />
