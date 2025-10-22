@@ -1,0 +1,40 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"preact": "^10.26.9",
+		"preact-iso": "^2.11.0",
+		"wikipedia": "^2.1.2"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "^2.10.2",
+		"eslint": "^9.37.0",
+		"eslint-config-preact": "^2.0.0",
+		"typescript": "^5.9.3",
+		"vite": "^7.0.4"
+	},
+	"eslintConfig": {
+		"extends": "preact"
+	},
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSameLine": true,
+		"bracketSpacing": true,
+		"checkIgnorePragma": true,
+		"useTabs": true,
+		"jsxSingleQuote": true,
+		"singleQuote": true,
+		"semi": true,
+		"trailingComma": "es5",
+		"htmlWhitespaceSensitivity": "strict",
+		"singleAttributePerLine": true,
+		"endOfLine": "lf",
+		"objectWrap": "collapse",
+		"quoteProps": "as-needed"
+	}
+}

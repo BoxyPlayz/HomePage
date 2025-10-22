@@ -1,0 +1,9 @@
+.home {
+	gap: 2vw;
+	align-items: flex-start;
+}
+
+main {
+	font-size: 2.2vh;
+	width: 100%;
+}

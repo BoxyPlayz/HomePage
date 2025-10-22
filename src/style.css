@@ -1,0 +1,63 @@
+@font-face {
+	font-family: "Open Sans";
+	src: url("./assets/OpenSans.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Garamond";
+	src: url("./assets/Garamond.ttf") format("truetype");
+}
+
+:root {
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Open Sans", "Ubuntu", sans-serif, system-ui;
+	overflow-x: hidden;
+}
+
+.garamond-font {
+	font-family: "Garamond", serif !important;
+}
+
+.center {
+	text-align: center;
+}
+
+body {
+	margin: 0;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header {
+	display: flex;
+	justify-content: flex-start;
+	background-color: #673ab8;
+	height: 7vh;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+header nav {
+	display: flex;
+}
+
+header a {
+	color: #fff;
+	padding: 0.75rem;
+	text-decoration: none;
+}
+
+header a.active {
+	background-color: #0005;
+}
+
+header a:hover {
+	background-color: #0008;
+}
