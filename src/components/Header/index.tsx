@@ -6,10 +6,10 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<a href="/" class={url == '/' && 'active'}>
+				<a href="/HomePage" class={url == '/HomePage' && 'active'}>
 					Home
 				</a>
-				<a href="/settings" class={url == '/404' && 'active'}>
+				<a href="/HomePage/settings" class={url == '/HomePage/settings' && 'active'}>
 					Settings
 				</a>
 			</nav>
