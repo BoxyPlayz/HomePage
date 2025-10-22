@@ -6,7 +6,7 @@ export const splashes = [
     "Do you wanna have a bad time?",
     "I'm in your walls.",
     "DRIVING IN MY CAR",
-    "I am the Globglogabgalab",
+    "I am the Globglogabgalab the Shwabble Dabble",
     "Buy Crypto!"
 ]
 
