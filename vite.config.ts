@@ -3,7 +3,7 @@ import preact from '@preact/preset-vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: './HomePage',
+	base: 'https://boxyplayz.github.io/HomePage/',
 	appType: 'spa',
 	build: {
 		rollupOptions: {
