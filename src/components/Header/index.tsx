@@ -1,6 +1,6 @@
 import { useLocation } from 'preact-iso';
 import SplashText from '@/components/SplashText';
-import { addBase } from '@/utils';
+import { addBase, get_base_url } from '@/utils';
 
 export function Header() {
 	const { url } = useLocation();
@@ -8,7 +8,7 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<a href={addBase("")} class={url == addBase("") && 'active'}>
+				<a href={get_base_url()} class={url == get_base_url() && 'active'}>
 					Home
 				</a>
 				<a href={addBase("settings")} class={url == addBase("settings") && 'active'}>
