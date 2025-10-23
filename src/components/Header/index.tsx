@@ -3,7 +3,8 @@ import {join} from 'path';
 import SplashText from '@/components/SplashText';
 
 const addBase = (path: string) => {
-	return join(import.meta.env.BASE_URL || '/', path);
+	const url = new URL(import.meta.env.BASE_URL || '/');
+	return join(url.pathname, path);
 }
 
 export function Header() {
