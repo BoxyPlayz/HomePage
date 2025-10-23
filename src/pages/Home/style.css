@@ -3,7 +3,11 @@
 	align-items: flex-start;
 }
 
-main {
-	font-size: 2.2vh;
-	width: 100%;
+#searchBar {
+	width: 20vw;
+	text-align: center;
+	margin: 0 auto;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
 }

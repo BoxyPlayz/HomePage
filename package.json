@@ -11,8 +11,11 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"dotenv": "^17.2.3",
+		"lrclib-api": "^2.0.4",
 		"preact": "^10.26.9",
 		"preact-iso": "^2.11.0",
+		"vite": "^7.0.4",
 		"wikipedia": "^2.1.2"
 	},
 	"devDependencies": {
@@ -20,7 +23,7 @@
 		"eslint": "^9.37.0",
 		"eslint-config-preact": "^2.0.0",
 		"typescript": "^5.9.3",
-		"vite": "^7.0.4"
+		"vite-plugin-node-polyfills": "^0.24.0"
 	},
 	"eslintConfig": {
 		"extends": "preact"

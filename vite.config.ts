@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import "dotenv/config";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: 'https://boxyplayz.github.io/HomePage/',
+	base: process.env.VITE_BASE_URL || '/',
 	appType: 'spa',
 	build: {
 		rollupOptions: {
@@ -15,11 +17,18 @@ export default defineConfig({
 			}
 		}
 	},
+	resolve: {
+		alias: {
+			"@/": "/src/"
+		}
+	},
 	server: {
 		port: 8000
 	},
 	preview: {
 		port: 8000
 	},
-	plugins: [preact()],
+	plugins: [preact(), nodePolyfills({
+		include: ["path"]
+	})],
 });

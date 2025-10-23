@@ -1,4 +1,10 @@
 import { useLocation } from 'preact-iso';
+import {join} from 'path';
+import SplashText from '@/components/SplashText';
+
+const addBase = (path: string) => {
+	return join(import.meta.env.BASE_URL || '/', path);
+}
 
 export function Header() {
 	const { url } = useLocation();
@@ -6,12 +12,13 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<a href="/HomePage" class={url == '/HomePage' && 'active'}>
+				<a href={addBase("")} class={url == addBase("") && 'active'}>
 					Home
 				</a>
-				<a href="/HomePage/settings" class={url == '/HomePage/settings' && 'active'}>
-					Settings
+				<a href={addBase("settings")} class={url == addBase("settings") && 'active'}>
+					Konfig
 				</a>
+				<SplashText />
 			</nav>
 		</header>
 	);

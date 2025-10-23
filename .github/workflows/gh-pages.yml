@@ -36,6 +36,8 @@ jobs:
             node-version: 20
       - name: "Install dependencies"
         run: "npm ci --include=dev"
+      - name: Configure Enviornment Variables
+        run: "echo 'VITE_BASE_URL=https://boxyplayz.github.io/HomePage/' >> .env"
       - name: Build
         run: "npm run build"
       - name: Setup Pages

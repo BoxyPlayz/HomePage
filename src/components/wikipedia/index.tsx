@@ -49,9 +49,9 @@ const Wikipedia = ({ title }: { title: string }) => {
             {siteURL && (
                 <>
                     <br />
-                    <a href={siteURL} target="_blank" rel="noopener noreferrer">
+                    {!error && <a href={siteURL} target="_blank" rel="noopener noreferrer">
                         Read more on Wikipedia
-                    </a>
+                    </a>}
                 </>
             )}
         </div>
