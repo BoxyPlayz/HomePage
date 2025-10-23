@@ -1,15 +1,6 @@
 import { useLocation } from 'preact-iso';
-import { join } from 'path';
 import SplashText from '@/components/SplashText';
-
-const addBase = (path: string) => {
-	try {
-		const url = new URL(import.meta.env.BASE_URL || '/');
-		return join(url.pathname, path);
-	} catch {
-		return join(import.meta.env.BASE_URL || '/', path);
-	}
-}
+import { addBase } from '@/utils';
 
 export function Header() {
 	const { url } = useLocation();
