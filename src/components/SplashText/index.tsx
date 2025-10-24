@@ -21,7 +21,13 @@ export const splashes = [
     "Pish Posh",
     "The fitnessgram pacer test",
     "Geneva Convention.",
-    "bless you"
+    "bless you",
+    "6 7",
+    "21",
+    "French Bread Pizza",
+    "Daniel give me coffee",
+    "I'm very artstic!",
+    "9+10=purple"
 ];
 
 export default function SplashText() {
