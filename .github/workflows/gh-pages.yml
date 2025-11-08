@@ -30,16 +30,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Set up Node js
         uses: actions/setup-node@v6
         with: 
             node-version: 20
       - name: "Install dependencies"
-        run: "npm ci --include=dev"
+        run: "pnpm install"
       - name: Configure Enviornment Variables
         run: "echo 'VITE_BASE_URL=https://boxyplayz.github.io/HomePage/' >> .env"
       - name: Build
-        run: "npm run build"
+        run: "pnpm build"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
