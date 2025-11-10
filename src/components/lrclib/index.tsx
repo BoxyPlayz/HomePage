@@ -8,12 +8,15 @@ const Lrclib = ({ song }: { song: string }) => {
     const [searchTerm, setSearchTerm] = useState<string>(song);
     const [Title, setTitle] = useState<string | null>(song);
     const contentRef = useRef<HTMLParagraphElement>(null);
+    const searchRef = useRef<HTMLInputElement>(null);
 
     const client = new Client();
 
-    const handleInput = (e: InputEvent) => {
-        const value = (e.currentTarget as HTMLInputElement).value;
-        setSearchTerm(value);
+    const handleSearch = (e) => {
+        const value = searchRef.current.value;
+        if (value) {
+            setSearchTerm(value);
+        }
     };
 
     useEffect(() => {
@@ -54,10 +57,11 @@ const Lrclib = ({ song }: { song: string }) => {
                 type="text"
                 name="lrc-search"
                 value={searchTerm}
-                onInput={handleInput}
+                ref={searchRef}
                 placeholder="Search Lrclib..."
-                style={{ width: "100%", marginBottom: "1rem" }}
+                style={{ width: "auto", marginBottom: "1rem" }}
             />
+            <button onClick={handleSearch}>Search</button>
             {Title && <h2>{Title}</h2>}
             {error && <p>{error}</p>}
             {!content && !error && <p>Loading...</p>}
