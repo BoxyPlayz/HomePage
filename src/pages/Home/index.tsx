@@ -42,10 +42,10 @@ export default function Home() {
 
 	useEffect(() => {
 		wiki('batman').catch(() => {
-			console.error("Unable to ping wikipedia.");
+			console.error('Unable to ping wikipedia.');
 			setWikipediaAvailable(false);
 		});
-	})
+	});
 
 	useEffect(() => {
 		fetch('https://ipinfo.io/json')
@@ -75,8 +75,14 @@ export default function Home() {
 				</form>
 			</main>
 			<section id='tabs'>
-				<TabbedContent component={<Dictionary word='hello' />}>Dictionary</TabbedContent>
-				{wikipediaAvailable && <TabbedContent component={<Wikipedia title='batman' />}>Wikipedia</TabbedContent>}
+				<TabbedContent component={<Dictionary word='hello' />}>
+					Dictionary
+				</TabbedContent>
+				{wikipediaAvailable && (
+					<TabbedContent component={<Wikipedia title='batman' />}>
+						Wikipedia
+					</TabbedContent>
+				)}
 				<TabbedContent component={<Lrclib song='Spongebob Theme' />}>
 					Lrclib
 				</TabbedContent>

@@ -28,7 +28,7 @@ const Lrclib = ({ song }: { song: string }) => {
 						setContent(null);
 						return;
 					}
-					let lyric = lyrics[0].plainLyrics;
+					const lyric = lyrics[0].plainLyrics;
 					if (new RegExp(/(?:\r\n|\r|\n)/g).test(lyric) == true)
 						setContent(lyric.replace(/(?:\r\n|\r|\n)/g, '<br>'));
 					if (lyrics[0].instrumental == true) {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import './styles.css';
 import { DictionaryApiRequest } from './dictionaryApi';
 
@@ -30,17 +30,15 @@ const Dictionary = ({ word }: { word: string }) => {
 								contentString += `${entry.definitions[0].definition}\n\n`;
 							});
 							setContent(contentString);
-						}
-						else if (data.length == 0) {
+						} else if (data.length == 0) {
 							setError('No definitions found.');
 							setContent(null);
 							return;
+						} else {
+							setContent(data[0].meanings[0].definitions[0].definition);
 						}
-						else {
-						setContent(data[0].meanings[0].definitions[0].definition);
-						}
-						setTitle(data[0].word)
-					})
+						setTitle(data[0].word);
+					});
 				setError(null);
 			} catch (err) {
 				console.error(err);

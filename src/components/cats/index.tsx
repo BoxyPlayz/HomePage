@@ -10,14 +10,12 @@ interface CatApiResponse {
 
 const Cats = () => {
 	const catsContainer = useRef<HTMLDivElement>(null);
-	const [usedState, setUsedState] = useState("Get Many Cats");
+	const [usedState, setUsedState] = useState('Get Many Cats');
 
 	function getCats(): void {
-		fetch(
-			'https://api.thecatapi.com/v1/images/search?limit=10'
-		)
+		fetch('https://api.thecatapi.com/v1/images/search?limit=10')
 			.then((response) => response.json())
-			.then((data: CatApiResponse[]) =>  {
+			.then((data: CatApiResponse[]) => {
 				data.forEach((cat) => {
 					const img = document.createElement('img');
 					img.src = cat.url;
@@ -28,7 +26,7 @@ const Cats = () => {
 						catsContainer.current.appendChild(img);
 					}
 				});
-				setUsedState("Get More Cats");
+				setUsedState('Get More Cats');
 			})
 			.catch((error) => {
 				console.error(error);
@@ -37,7 +35,7 @@ const Cats = () => {
 
 	return (
 		<div class='joke-component'>
-			<div ref={catsContainer}></div>
+			<div ref={catsContainer} />
 			<button
 				onClick={getCats}
 				style={{
