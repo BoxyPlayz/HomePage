@@ -25,9 +25,23 @@ const Dictionary = ({ word }: { word: string }) => {
 					.then((data) => {
 						if (data[0].meanings.length > 1) {
 							let contentString = '';
+							let index = 1;
 							data[0].meanings.forEach((entry) => {
 								contentString += `(${entry.partOfSpeech})\n`;
-								contentString += `${entry.definitions[0].definition}\n\n`;
+								entry.definitions.forEach((ex) => {
+									contentString += `${index}. ${ex.definition}\n`;
+									contentString += ex.example ? `Example: ${ex.example}\n` : '';
+									contentString +=
+										ex.synonyms.length > 0
+											? `Synonyms: ${ex.synonyms.join(', ')}\n`
+											: '';
+									contentString +=
+										ex.antonyms.length > 0
+											? `Antonyms: ${ex.antonyms.join(', ')}\n`
+											: '';
+									contentString += '\n';
+									index++;
+								});
 							});
 							setContent(contentString);
 						} else if (data.length == 0) {

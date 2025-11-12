@@ -11,7 +11,8 @@
 		"preview": "vite preview",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .ts,.tsx",
-		"lintStrict": "eslint . --ext .ts,.tsx --no-fix --max-warnings 0"
+		"lintStrict": "eslint . --ext .ts,.tsx --no-fix --max-warnings 0",
+		"prep": "pnpm format && pnpm lint"
 	},
 	"dependencies": {
 		"@reactuses/core": "^6.1.5",

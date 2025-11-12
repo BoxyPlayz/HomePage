@@ -1,1 +1,3 @@
-# I am the golabgolabgolabalob the schwabble dabble dabble
+# CONTRIBUTING:
+
+You can edit public/splashes.txt to add more splash texts. More coming soon!
