@@ -22,7 +22,7 @@
 		"react": "npm:@preact/compat@^18.3.1",
 		"react-dom": "npm:@preact/compat@^18.3.1",
 		"vite": "^7.1.12",
-		"wikipedia": "^2.1.2"
+		"wikipedia": "^2.4.2"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.1",
