@@ -8,40 +8,31 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"format": "prettier --write .",
+		"lint": "eslint . --ext .ts,.tsx",
+		"lintStrict": "eslint . --ext .ts,.tsx --no-fix --max-warnings 0"
 	},
 	"dependencies": {
+		"@reactuses/core": "^6.1.5",
 		"dotenv": "^17.2.3",
 		"lrclib-api": "^2.0.4",
 		"preact": "^10.26.9",
 		"preact-iso": "^2.11.0",
+		"react": "npm:@preact/compat@^18.3.1",
+		"react-dom": "npm:@preact/compat@^18.3.1",
 		"vite": "^7.1.12",
 		"wikipedia": "^2.1.2"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.39.1",
 		"@preact/preset-vite": "^2.10.2",
 		"eslint": "^9.37.0",
 		"eslint-config-preact": "^2.0.0",
+		"jiti": "^2.6.1",
+		"prettier": "^3.6.2",
 		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.46.4",
 		"vite-plugin-node-polyfills": "^0.24.0"
-	},
-	"eslintConfig": {
-		"extends": "preact"
-	},
-	"prettier": {
-		"arrowParens": "always",
-		"bracketSameLine": true,
-		"bracketSpacing": true,
-		"checkIgnorePragma": true,
-		"useTabs": true,
-		"jsxSingleQuote": true,
-		"singleQuote": true,
-		"semi": true,
-		"trailingComma": "es5",
-		"htmlWhitespaceSensitivity": "strict",
-		"singleAttributePerLine": true,
-		"endOfLine": "lf",
-		"objectWrap": "collapse",
-		"quoteProps": "as-needed"
 	}
 }

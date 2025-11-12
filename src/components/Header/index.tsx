@@ -8,10 +8,14 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<a href={get_base_url()} class={url == get_base_url() && 'active'}>
+				<a
+					href={get_base_url()}
+					class={url == get_base_url() && 'active'}>
 					Home
 				</a>
-				<a href={addBase("settings")} class={url == addBase("settings") && 'active'}>
+				<a
+					href={addBase('settings')}
+					class={url == addBase('settings') && 'active'}>
 					Konfig
 				</a>
 				<SplashText />

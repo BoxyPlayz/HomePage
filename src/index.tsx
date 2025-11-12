@@ -1,5 +1,11 @@
 import { render } from 'preact';
-import { LocationProvider, Router, Route, lazy, ErrorBoundary } from 'preact-iso';
+import {
+	LocationProvider,
+	Router,
+	Route,
+	lazy,
+	ErrorBoundary,
+} from 'preact-iso';
 import './style.css';
 import { Header } from '@/components/Header';
 import { addBase, get_base_url } from '@/utils';
@@ -14,9 +20,18 @@ export function App() {
 			<ErrorBoundary>
 				<Header />
 				<Router>
-					<Route path={get_base_url()} component={Home} />
-					<Route path={addBase("settings")} component={Settings} />
-					<Route default component={NotFound} />
+					<Route
+						path={get_base_url()}
+						component={Home}
+					/>
+					<Route
+						path={addBase('settings')}
+						component={Settings}
+					/>
+					<Route
+						default
+						component={NotFound}
+					/>
 				</Router>
 			</ErrorBoundary>
 		</LocationProvider>

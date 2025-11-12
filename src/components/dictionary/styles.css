@@ -1,0 +1,7 @@
+.dict-component {
+	border: 2vw solid #896018;
+	border-radius: 1vw;
+	background-color: #f3e051;
+	color: black;
+	white-space: pre-wrap;
+}
