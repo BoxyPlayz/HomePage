@@ -1,6 +1,7 @@
 import { useLocation } from 'preact-iso';
 import SplashText from '@/components/SplashText';
 import { addBase, get_base_url } from '@/utils';
+import searchyImg from '@/assets/searchy.png';
 
 export function Header() {
 	const { url } = useLocation();
@@ -9,7 +10,7 @@ export function Header() {
 		<header>
 			<nav>
 				<img
-					src='/searchy.png'
+					src={searchyImg}
 					alt='Searchy the Search Thingy'
 				/>
 				<a

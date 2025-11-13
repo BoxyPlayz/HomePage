@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import './styles.css';
+import { get_base_url } from '@/utils';
 
 /*export const splashes = [
 	"I'm Spider-Man",
@@ -39,7 +40,7 @@ export default function SplashText() {
 	);
 	useEffect(() => {
 		let cancelled = false;
-		fetch('/splashes.txt')
+		fetch(`${get_base_url()}splashes.txt`)
 			.then((res) => res.text())
 			.then((data) => {
 				if (cancelled) return;
