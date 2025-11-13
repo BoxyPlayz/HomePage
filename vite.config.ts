@@ -5,7 +5,7 @@ import 'dotenv/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: process.env.VITE_BASE_URL || '/',
+	base: "/HomePage/",
 	appType: 'spa',
 	build: {
 		rollupOptions: {

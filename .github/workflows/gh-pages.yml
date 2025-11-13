@@ -38,8 +38,6 @@ jobs:
         run: 'pnpm install'
       - name: 'Lint Code'
         run: 'pnpm lintStrict'
-      - name: Configure Enviornment Variables
-        run: "echo 'VITE_BASE_URL=/HomePage/' >> .env"
       - name: Build
         run: 'pnpm build'
       - name: Setup Pages
