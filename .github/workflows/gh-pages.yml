@@ -2,10 +2,7 @@ name: Build and Deploy Vite App to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - src/
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
@@ -42,7 +39,7 @@ jobs:
       - name: 'Lint Code'
         run: 'pnpm lintStrict'
       - name: Configure Enviornment Variables
-        run: "echo 'VITE_BASE_URL=https://boxyplayz.github.io/HomePage/' >> .env"
+        run: "echo 'VITE_BASE_URL=/HomePage/' >> .env"
       - name: Build
         run: 'pnpm build'
       - name: Setup Pages
@@ -51,11 +48,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
-      - name: Debug Info
-        run: |
-          echo "Listing files in the artifact:"
-          dir ./dist
-          dir ./dist/assets
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

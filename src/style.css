@@ -1,23 +1,13 @@
-@font-face {
-	font-family: 'Open Sans';
-	src: url('./assets/OpenSans.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Garamond';
-	src: url('./assets/Garamond.ttf') format('truetype');
-}
-
 :root {
 	display: flex;
 	flex-direction: column;
 
-	font-family: 'Open Sans', 'Ubuntu', sans-serif, system-ui;
+	font-family: sans-serif, system-ui;
 	overflow-x: hidden;
 }
 
 .garamond-font {
-	font-family: 'Garamond', serif !important;
+	font-family: serif !important;
 }
 
 .center {

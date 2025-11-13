@@ -8,7 +8,10 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-					<img src="/searchy.png" alt="Searchy the Search Thingy" />
+				<img
+					src='/searchy.png'
+					alt='Searchy the Search Thingy'
+				/>
 				<a
 					href={get_base_url()}
 					class={url == get_base_url() && 'active'}>
