@@ -1,4 +1,5 @@
 {
+	"homepage": "https://boxyplayz.github.io/HomePage/",
 	"engines": {
 		"node": ">= 20.0.0",
 		"npm": ">= 9.0.0"
