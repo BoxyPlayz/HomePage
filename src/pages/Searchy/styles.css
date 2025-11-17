@@ -9,4 +9,7 @@ ul {
 			display: block;
 		}
 	}
+	li:hover {
+		box-shadow: 0 0 20px #ffffffbc;
+	}
 }

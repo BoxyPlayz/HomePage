@@ -1,7 +1,7 @@
 import { get_base_url } from '@/utils.ts';
 import { useEffect, useState } from 'preact/hooks';
-import searchyImg from "@/assets/searchy.png"
-import "./styles.css"
+import searchyImg from '@/assets/searchy.png';
+import './styles.css';
 
 interface searchy {
 	searches: Record<string, string>;
@@ -23,7 +23,9 @@ export default function Searchy() {
 				const res = await fetch(`${get_base_url()}searchy.json`);
 				const data = (await res.json()) as searchy;
 				setSearchyData(data);
-				setResults(Object.entries(data.searches).map(([name, url]) => ({ name, url })));
+				setResults(
+					Object.entries(data.searches).map(([name, url]) => ({ name, url }))
+				);
 			} catch (err) {
 				console.error('Failed to load searchy.json', err);
 			}
@@ -39,7 +41,12 @@ export default function Searchy() {
 
 		const trimmedQuery = query.trim().toLowerCase();
 		if (trimmedQuery.length === 0) {
-			setResults(Object.entries(searchyData.searches).map(([name, url]) => ({ name, url })));
+			setResults(
+				Object.entries(searchyData.searches).map(([name, url]) => ({
+					name,
+					url,
+				}))
+			);
 			return;
 		}
 
@@ -53,13 +60,22 @@ export default function Searchy() {
 	return (
 		<div>
 			<h1>Searchy </h1>
-			<img width={40} src={searchyImg} alt="Searchy" />
+			<img
+				width={40}
+				src={searchyImg}
+				alt='Searchy'
+			/>
 			<input
 				type='text'
 				value={search}
 				onInput={handleSearchChange}
 				placeholder='France'
-				style={{ backgroundColor: 'white', color: 'black', verticalAlign: "middle", display: 'inline-block' }}
+				style={{
+					backgroundColor: 'white',
+					color: 'black',
+					verticalAlign: 'middle',
+					display: 'inline-block',
+				}}
 			/>
 			<ul>
 				{results.map((result) => (

@@ -22,7 +22,7 @@ export function Header() {
 				</a>
 				<a href={addBase('searchy')}>
 					<img
-						src={ url == addBase('searchy') ? emptyImg : searchyImg }
+						src={url == addBase('searchy') ? emptyImg : searchyImg}
 						alt='Searchy the Search Thingy'
 						className='searchy'
 						style={{ width: '2rem', height: '2rem' }}
