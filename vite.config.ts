@@ -9,6 +9,10 @@ export default defineConfig({
 	appType: 'spa',
 	build: {
 		rollupOptions: {
+			input: {
+				main: "index.html",
+				notfound: "404.html"
+			},
 			output: {
 				manualChunks: {
 					preact: ['preact', 'preact/hooks', 'preact-iso'],
