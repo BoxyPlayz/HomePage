@@ -5,7 +5,7 @@ import 'dotenv/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: "/HomePage/",
+	base: '/HomePage/',
 	appType: 'spa',
 	build: {
 		rollupOptions: {
@@ -13,6 +13,9 @@ export default defineConfig({
 				manualChunks: {
 					preact: ['preact', 'preact/hooks', 'preact-iso'],
 					wiki: ['wikipedia'],
+					searchy: ['src/pages/Searchy'],
+					konfig: ['src/pages/Settings'],
+					home: ['src/pages/Home'],
 				},
 			},
 		},

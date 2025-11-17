@@ -11,7 +11,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier --write .",
-		"lint": "eslint . --ext .ts,.tsx",
+		"lint": "eslint --cache . --ext .ts,.tsx",
 		"lintStrict": "eslint . --ext .ts,.tsx --no-fix --max-warnings 0",
 		"prep": "pnpm format && pnpm lint"
 	},

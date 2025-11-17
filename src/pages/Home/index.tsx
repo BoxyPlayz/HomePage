@@ -3,11 +3,11 @@ import './style.css';
 import { useEffect, useState } from 'preact/hooks';
 import { ComponentChildren } from 'preact';
 import { JSX } from 'preact/jsx-runtime';
-import Lrclib from '@/components/lrclib';
+import Lrclib from '@/components/lrclib/index.tsx';
 import { useLocalStorage } from '@reactuses/core';
-import Joke from '@/components/jokes';
-import Dictionary from '@/components/dictionary';
-import Cats from '@/components/cats';
+import Joke from '@/components/jokes/index.tsx';
+import Dictionary from '@/components/dictionary/index.tsx';
+import Cats from '@/components/cats/index.tsx';
 import wiki from 'wikipedia';
 
 export default function Home() {

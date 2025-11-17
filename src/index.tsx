@@ -7,12 +7,13 @@ import {
 	ErrorBoundary,
 } from 'preact-iso';
 import './style.css';
-import { Header } from '@/components/Header';
-import { addBase, get_base_url } from '@/utils';
+import { Header } from '@/components/Header/index.tsx';
+import { addBase, get_base_url } from '@/utils.ts';
 
-const Home = lazy(() => import('./pages/Home/index'));
-const Settings = lazy(() => import('./pages/Settings/index'));
-const NotFound = lazy(() => import('./pages/_404'));
+const Home = lazy(() => import('./pages/Home/index.tsx'));
+const Settings = lazy(() => import('./pages/Settings/index.tsx'));
+const Searchy = lazy(() => import('./pages/Searchy/index.tsx'));
+const NotFound = lazy(() => import('./pages/_404.tsx'));
 
 export function App() {
 	return (
@@ -23,6 +24,10 @@ export function App() {
 					<Route
 						path={get_base_url()}
 						component={Home}
+					/>
+					<Route
+						path={addBase('searchy')}
+						component={Searchy}
 					/>
 					<Route
 						path={addBase('settings')}

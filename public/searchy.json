@@ -1,0 +1,10 @@
+{
+	"searches": {
+		"Google": "https://www.google.com/",
+		"Better Auth": "https://www.better-auth.com/",
+		"Youtube": "https://www.youtube.com/",
+		"Github": "https://github.com/",
+		"Vite": "https://vite.dev/",
+		"Next": "https://nextjs.org/"
+	}
+}

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import './styles.css';
-import { DictionaryApiRequest } from './dictionaryApi';
+import type { DictionaryApiRequest } from './dictionaryApi.d.ts';
 
 const Dictionary = ({ word }: { word: string }) => {
 	const [content, setContent] = useState<string | null>(null);

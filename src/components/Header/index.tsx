@@ -1,7 +1,8 @@
 import { useLocation } from 'preact-iso';
-import SplashText from '@/components/SplashText';
-import { addBase, get_base_url } from '@/utils';
+import SplashText from '@/components/SplashText/index.tsx';
+import { addBase, get_base_url } from '@/utils.ts';
 import searchyImg from '@/assets/searchy.png';
+import emptyImg from '@/assets/empty.png';
 
 export function Header() {
 	const { url } = useLocation();
@@ -9,19 +10,23 @@ export function Header() {
 	return (
 		<header>
 			<nav>
-				<img
-					src={searchyImg}
-					alt='Searchy the Search Thingy'
-				/>
 				<a
 					href={get_base_url()}
-					class={url == get_base_url() && 'active'}>
+					className={url == get_base_url() && 'active'}>
 					Home
 				</a>
 				<a
 					href={addBase('settings')}
-					class={url == addBase('settings') && 'active'}>
+					className={url == addBase('settings') && 'active'}>
 					Konfig
+				</a>
+				<a href={addBase('searchy')}>
+					<img
+						src={ url == addBase('searchy') ? emptyImg : searchyImg }
+						alt='Searchy the Search Thingy'
+						className='searchy'
+						style={{ width: '2rem', height: '2rem' }}
+					/>
 				</a>
 				<SplashText />
 			</nav>
