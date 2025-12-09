@@ -16,7 +16,7 @@
 		"prep": "pnpm format && pnpm lint"
 	},
 	"dependencies": {
-		"@reactuses/core": "^6.1.5",
+		"@reactuses/core": "^6.1.6",
 		"dotenv": "^17.2.3",
 		"lrclib-api": "^2.0.4",
 		"preact": "^10.27.2",
