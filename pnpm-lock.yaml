@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@reactuses/core':
         specifier: ^6.1.6
-        version: 6.1.6(@preact/compat@18.3.1(preact@10.27.2))
+        version: 6.1.6(@preact/compat@18.3.1(preact@10.28.0))
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -18,17 +18,17 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       preact:
-        specifier: ^10.27.2
-        version: 10.27.2
+        specifier: ^10.28.0
+        version: 10.28.0
       preact-iso:
         specifier: ^2.11.0
-        version: 2.11.0(preact-render-to-string@6.6.3(preact@10.27.2))(preact@10.27.2)
+        version: 2.11.0(preact-render-to-string@6.6.3(preact@10.28.0))(preact@10.28.0)
       react:
         specifier: npm:@preact/compat@^18.3.1
-        version: '@preact/compat@18.3.1(preact@10.27.2)'
+        version: '@preact/compat@18.3.1(preact@10.28.0)'
       react-dom:
         specifier: npm:@preact/compat@^18.3.1
-        version: '@preact/compat@18.3.1(preact@10.27.2)'
+        version: '@preact/compat@18.3.1(preact@10.28.0)'
       vite:
         specifier: ^7.2.7
         version: 7.2.7(jiti@2.6.1)
@@ -41,7 +41,7 @@ importers:
         version: 9.39.1
       '@preact/preset-vite':
         specifier: ^2.10.2
-        version: 2.10.2(@babel/core@7.28.5)(preact@10.27.2)(vite@7.2.7(jiti@2.6.1))
+        version: 2.10.2(@babel/core@7.28.5)(preact@10.28.0)(vite@7.2.7(jiti@2.6.1))
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -1665,8 +1665,8 @@ packages:
     peerDependencies:
       preact: '>=10 || >= 11.0.0-0'
 
-  preact@10.27.2:
-    resolution: {integrity: sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg==}
+  preact@10.28.0:
+    resolution: {integrity: sha512-rytDAoiXr3+t6OIP3WGlDd0ouCUG1iCWzkcY3++Nreuoi17y6T5i/zRhe6uYfoVcxq6YU+sBtJouuRDsq8vvqA==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -2383,16 +2383,16 @@ snapshots:
     dependencies:
       eslint-scope: 5.1.1
 
-  '@preact/compat@18.3.1(preact@10.27.2)':
+  '@preact/compat@18.3.1(preact@10.28.0)':
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.0
 
-  '@preact/preset-vite@2.10.2(@babel/core@7.28.5)(preact@10.27.2)(vite@7.2.7(jiti@2.6.1))':
+  '@preact/preset-vite@2.10.2(@babel/core@7.28.5)(preact@10.28.0)(vite@7.2.7(jiti@2.6.1))':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-transform-react-jsx': 7.27.1(@babel/core@7.28.5)
       '@babel/plugin-transform-react-jsx-development': 7.27.1(@babel/core@7.28.5)
-      '@prefresh/vite': 2.4.11(preact@10.27.2)(vite@7.2.7(jiti@2.6.1))
+      '@prefresh/vite': 2.4.11(preact@10.28.0)(vite@7.2.7(jiti@2.6.1))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.28.5)
       debug: 4.4.3
@@ -2405,33 +2405,33 @@ snapshots:
 
   '@prefresh/babel-plugin@0.5.2': {}
 
-  '@prefresh/core@1.5.9(preact@10.27.2)':
+  '@prefresh/core@1.5.9(preact@10.28.0)':
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.0
 
   '@prefresh/utils@1.2.1': {}
 
-  '@prefresh/vite@2.4.11(preact@10.27.2)(vite@7.2.7(jiti@2.6.1))':
+  '@prefresh/vite@2.4.11(preact@10.28.0)(vite@7.2.7(jiti@2.6.1))':
     dependencies:
       '@babel/core': 7.28.5
       '@prefresh/babel-plugin': 0.5.2
-      '@prefresh/core': 1.5.9(preact@10.27.2)
+      '@prefresh/core': 1.5.9(preact@10.28.0)
       '@prefresh/utils': 1.2.1
       '@rollup/pluginutils': 4.2.1
-      preact: 10.27.2
+      preact: 10.28.0
       vite: 7.2.7(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@reactuses/core@6.1.6(@preact/compat@18.3.1(preact@10.27.2))':
+  '@reactuses/core@6.1.6(@preact/compat@18.3.1(preact@10.28.0))':
     dependencies:
       '@microsoft/fetch-event-source': 2.0.1
       '@testing-library/dom': 10.4.1
       js-cookie: 3.0.5
       lodash-es: 4.17.21
-      react: '@preact/compat@18.3.1(preact@10.27.2)'
+      react: '@preact/compat@18.3.1(preact@10.28.0)'
       screenfull: 5.2.0
-      use-sync-external-store: 1.6.0(@preact/compat@18.3.1(preact@10.27.2))
+      use-sync-external-store: 1.6.0(@preact/compat@18.3.1(preact@10.28.0))
 
   '@rollup/plugin-inject@5.0.5(rollup@4.53.3)':
     dependencies:
@@ -3889,16 +3889,16 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact-iso@2.11.0(preact-render-to-string@6.6.3(preact@10.27.2))(preact@10.27.2):
+  preact-iso@2.11.0(preact-render-to-string@6.6.3(preact@10.28.0))(preact@10.28.0):
     dependencies:
-      preact: 10.27.2
-      preact-render-to-string: 6.6.3(preact@10.27.2)
+      preact: 10.28.0
+      preact-render-to-string: 6.6.3(preact@10.28.0)
 
-  preact-render-to-string@6.6.3(preact@10.27.2):
+  preact-render-to-string@6.6.3(preact@10.28.0):
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.0
 
-  preact@10.27.2: {}
+  preact@10.28.0: {}
 
   prelude-ls@1.2.1: {}
 
@@ -4312,9 +4312,9 @@ snapshots:
       punycode: 1.4.1
       qs: 6.14.0
 
-  use-sync-external-store@1.6.0(@preact/compat@18.3.1(preact@10.27.2)):
+  use-sync-external-store@1.6.0(@preact/compat@18.3.1(preact@10.28.0)):
     dependencies:
-      react: '@preact/compat@18.3.1(preact@10.27.2)'
+      react: '@preact/compat@18.3.1(preact@10.28.0)'
 
   util-deprecate@1.0.2: {}
 
