@@ -23,7 +23,7 @@
 		"preact-iso": "^2.11.0",
 		"react": "npm:@preact/compat@^18.3.1",
 		"react-dom": "npm:@preact/compat@^18.3.1",
-		"vite": "^7.2.2",
+		"vite": "^7.2.7",
 		"wikipedia": "^2.4.2"
 	},
 	"devDependencies": {
