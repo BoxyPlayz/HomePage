@@ -1,8 +1,9 @@
 import { render } from 'preact';
 import { ErrorBoundary, LocationProvider, Route, Router, lazy } from 'preact-iso';
-import { Header } from '@/components/Header/index.tsx';
 import { addBase, get_base_url } from '@/utils.ts';
 import './style.css';
+
+const Header = lazy(() => import('./components/Header/index.tsx'));
 
 const Home = lazy(() => import('./pages/Home/index.tsx'));
 const Settings = lazy(() => import('./pages/Settings/index.tsx'));

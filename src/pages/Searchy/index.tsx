@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
-import searchyImg from '@/assets/Searchy.png';
+import searchyImg from '@/assets/searchy.png';
 import { get_base_url } from '@/utils.ts';
 import './styles.css';
 

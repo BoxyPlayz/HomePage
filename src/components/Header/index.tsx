@@ -4,7 +4,7 @@ import searchyImg from '@/assets/searchy.png';
 import SplashText from '@/components/SplashText/index.tsx';
 import { addBase, get_base_url } from '@/utils.ts';
 
-export function Header() {
+export default function Header() {
 	const { url } = useLocation();
 
 	return (

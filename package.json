@@ -38,5 +38,8 @@
 		"vite": "npm:rolldown-vite@^7.2.11",
 		"vite-plugin-node-polyfills": "^0.24.0"
 	},
+	"overrides": {
+		"vite": "npm:rolldown-vite@latest"
+	},
 	"prettier": "@boxyplayz/prettier-config"
 }
