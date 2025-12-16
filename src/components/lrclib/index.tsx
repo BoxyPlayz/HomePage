@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState, useMemo } from 'preact/hooks';
-import './styles.css';
 import { Client } from 'lrclib-api';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import './styles.css';
 
 const Lrclib = ({ song }: { song: string }) => {
 	const [content, setContent] = useState<string | null>(null);
@@ -30,7 +30,9 @@ const Lrclib = ({ song }: { song: string }) => {
 					}
 					const lyric = lyrics[0].plainLyrics;
 					if (new RegExp(/(?:\r\n|\r|\n)/g).test(lyric) == true)
-						setContent(lyric.replace(/(?:\r\n|\r|\n)/g, '<br>'));
+						setContent(
+							lyric.replace(/(?:\r\n|\r|\n)/g, '<br>')
+						);
 					if (lyrics[0].instrumental == true) {
 						setContent('[Instrumental]');
 					}

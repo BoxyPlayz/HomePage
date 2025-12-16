@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import './styles.css';
 import type { DictionaryApiRequest } from './dictionaryApi.d.ts';
+import './styles.css';
 
 const Dictionary = ({ word }: { word: string }) => {
 	const [content, setContent] = useState<string | null>(null);
@@ -20,8 +20,13 @@ const Dictionary = ({ word }: { word: string }) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`)
-					.then((response) => response.json() as Promise<DictionaryApiRequest>)
+				fetch(
+					`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`
+				)
+					.then(
+						(response) =>
+							response.json() as Promise<DictionaryApiRequest>
+					)
 					.then((data) => {
 						if (data[0].meanings.length > 1) {
 							let contentString = '';
@@ -30,15 +35,26 @@ const Dictionary = ({ word }: { word: string }) => {
 								contentString += `(${entry.partOfSpeech})\n`;
 								entry.definitions.forEach((ex) => {
 									contentString += `${index}. ${ex.definition}\n`;
-									contentString += ex.example ? `Example: ${ex.example}\n` : '';
 									contentString +=
-										ex.synonyms.length > 0
-											? `Synonyms: ${ex.synonyms.join(', ')}\n`
-											: '';
+										ex.example ?
+											`Example: ${ex.example}\n`
+										:	'';
 									contentString +=
-										ex.antonyms.length > 0
-											? `Antonyms: ${ex.antonyms.join(', ')}\n`
-											: '';
+										(
+											ex.synonyms
+												.length >
+											0
+										) ?
+											`Synonyms: ${ex.synonyms.join(', ')}\n`
+										:	'';
+									contentString +=
+										(
+											ex.antonyms
+												.length >
+											0
+										) ?
+											`Antonyms: ${ex.antonyms.join(', ')}\n`
+										:	'';
 									contentString += '\n';
 									index++;
 								});
@@ -49,7 +65,10 @@ const Dictionary = ({ word }: { word: string }) => {
 							setContent(null);
 							return;
 						} else {
-							setContent(data[0].meanings[0].definitions[0].definition);
+							setContent(
+								data[0].meanings[0].definitions[0]
+									.definition
+							);
 						}
 						setTitle(data[0].word);
 					});

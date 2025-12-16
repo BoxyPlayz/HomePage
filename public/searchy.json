@@ -2,18 +2,22 @@
 	"searches": {
 		"Google": "https://www.google.com/",
 		"Better Auth": "https://www.better-auth.com/",
-		"Youtube": "https://www.youtube.com/",
 		"Github": "https://github.com/",
 		"Vite": "https://vite.dev/",
 		"Next": "https://nextjs.org/",
 		"JS Paint": "https://jspaint.app/",
-		"Github": "https://github.com/",
 		"Express JS": "https://expressjs.com/",
 		"TypeScript": "https://www.typescriptlang.org/",
 		"Neoforged ModLoader": "https://neoforged.net/",
 		"YouTube": "https://www.youtube.com",
 		"Fabric ModLoader": "https://fabricmc.net/",
 		"Quilt ModLoader": "https://quiltmc.org/en/",
-		"W3Schools": "https://www.w3schools.com/"
+		"W3Schools": "https://www.w3schools.com/",
+		"Prettier": "https://prettier.io/",
+		"Boxy's Computer Things": "https://boxyplayz.github.io/computers/",
+		"Lazybones CSS": "https://boxyplayz.github.io/lazybones/",
+		"Klassroom by Boxy": "https://github.com/BoxyPlayz/Klassroom",
+		"Rolldown": "https://rolldown.rs/",
+		"Pizza Hut": "https://www.pizzahut.com/"
 	}
 }

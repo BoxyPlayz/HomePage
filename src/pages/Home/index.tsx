@@ -1,28 +1,22 @@
+import { useLocalStorage } from '@reactuses/core';
+import { ComponentChildren } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+import { JSX } from 'preact/jsx-runtime';
+import wiki from 'wikipedia';
+import Cats from '@/components/cats/index.tsx';
+import Dictionary from '@/components/dictionary/index.tsx';
+import Joke from '@/components/jokes/index.tsx';
+import Lrclib from '@/components/lrclib/index.tsx';
 import Wikipedia from '@/components/wikipedia';
 import './style.css';
-import { useEffect, useState } from 'preact/hooks';
-import { ComponentChildren } from 'preact';
-import { JSX } from 'preact/jsx-runtime';
-import Lrclib from '@/components/lrclib/index.tsx';
-import { useLocalStorage } from '@reactuses/core';
-import Joke from '@/components/jokes/index.tsx';
-import Dictionary from '@/components/dictionary/index.tsx';
-import Cats from '@/components/cats/index.tsx';
-import wiki from 'wikipedia';
 
 export default function Home() {
 	const [nyeh, nyehHehHeh] = useState<string>(null);
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
-	const [selectedEngine] = useLocalStorage(
-		'searchURI',
-		'https://www.google.com/search?q='
-	);
+	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
 
-	function TabbedContent(props: {
-		children: ComponentChildren;
-		component: JSX.Element;
-	}) {
+	function TabbedContent(props: { children: ComponentChildren; component: JSX.Element }) {
 		return (
 			<button onClick={() => setActiveTab(() => props.component)}>
 				{props.children}

@@ -1,61 +1,50 @@
+import { useEffect, useMemo, useState } from 'preact/hooks';
+import searchyImg from '@/assets/Searchy.png';
 import { get_base_url } from '@/utils.ts';
-import { useEffect, useState } from 'preact/hooks';
-import searchyImg from '@/assets/searchy.png';
 import './styles.css';
 
-interface searchy {
+interface Searchy {
 	searches: Record<string, string>;
 }
 
-interface searchyResult {
+interface SearchyResult {
 	name: string;
 	url: string;
 }
 
 export default function Searchy() {
-	const [search, setSearch] = useState<string>('');
-	const [searchyData, setSearchyData] = useState<searchy | null>(null);
-	const [results, setResults] = useState<searchyResult[]>([]);
+	const [search, setSearch] = useState('');
+	const [sortedResults, setSortedResults] = useState<SearchyResult[]>([]);
 
 	useEffect(() => {
 		const fetchSearches = async () => {
 			try {
 				const res = await fetch(`${get_base_url()}searchy.json`);
-				const data = (await res.json()) as searchy;
-				setSearchyData(data);
-				setResults(
-					Object.entries(data.searches).map(([name, url]) => ({ name, url }))
+				const data: Searchy = await res.json();
+				setSortedResults(
+					Object.entries(data.searches)
+						.sort(([a], [b]) =>
+							a.localeCompare(b, undefined, {
+								sensitivity: 'base',
+							})
+						)
+						.map(([name, url]) => ({ name, url }))
 				);
 			} catch (err) {
-				console.error('Failed to load searchy.json', err);
+				console.error(err);
 			}
 		};
 		fetchSearches();
 	}, []);
 
-	const handleSearchChange = (e: InputEvent) => {
-		const query = (e.target as HTMLInputElement).value;
-		setSearch(query);
+	const filteredResults = useMemo(() => {
+		const query = search.trim().toLowerCase();
+		if (query === '') return sortedResults;
 
-		if (!searchyData) return;
+		return sortedResults.filter(({ name }) => name.toLowerCase().includes(query));
+	}, [search, sortedResults]);
 
-		const trimmedQuery = query.trim().toLowerCase();
-		if (trimmedQuery.length === 0) {
-			setResults(
-				Object.entries(searchyData.searches).map(([name, url]) => ({
-					name,
-					url,
-				}))
-			);
-			return;
-		}
-
-		const newResults = Object.entries(searchyData.searches)
-			.filter(([name]) => name.toLowerCase().includes(trimmedQuery))
-			.map(([name, url]) => ({ name, url }));
-
-		setResults(newResults);
-	};
+	const handleSearchChange = (e: Event) => setSearch((e.target as HTMLInputElement).value);
 
 	return (
 		<div>
@@ -78,7 +67,7 @@ export default function Searchy() {
 				}}
 			/>
 			<ul>
-				{results.map((result) => (
+				{filteredResults.map((result) => (
 					<li key={result.url}>
 						<a href={result.url}>{result.name}</a>
 					</li>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
-import './styles.css';
 import { get_base_url } from '@/utils.ts';
+import './styles.css';
 
 const LOADING_SPLASHES = ['Loading Splashes...'];
 
@@ -21,7 +21,9 @@ export default function SplashText() {
 					.filter((l) => l.length > 0);
 				if (loaded.length > 0) {
 					setSplashes(loaded);
-					setSplash(loaded[Math.floor(Math.random() * loaded.length)]);
+					setSplash(
+						loaded[Math.floor(Math.random() * loaded.length)]
+					);
 				}
 			})
 			.catch((err) => console.error('Error loading splashes:', err));

@@ -1,5 +1,5 @@
-import wiki from 'wikipedia';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import wiki from 'wikipedia';
 import './styles.css';
 
 const Wikipedia = ({ title }: { title: string }) => {

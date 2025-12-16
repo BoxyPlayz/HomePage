@@ -23,10 +23,10 @@
 		"preact-iso": "^2.11.0",
 		"react": "npm:@preact/compat@^18.3.1",
 		"react-dom": "npm:@preact/compat@^18.3.1",
-		"vite": "^7.2.7",
 		"wikipedia": "^2.4.2"
 	},
 	"devDependencies": {
+		"@boxyplayz/prettier-config": "^1.0.0",
 		"@eslint/js": "^9.39.1",
 		"@preact/preset-vite": "^2.10.2",
 		"eslint": "^9.39.1",
@@ -35,6 +35,8 @@
 		"prettier": "^3.7.4",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0",
+		"vite": "npm:rolldown-vite@^7.2.11",
 		"vite-plugin-node-polyfills": "^0.24.0"
-	}
+	},
+	"prettier": "@boxyplayz/prettier-config"
 }
