@@ -22,7 +22,14 @@
 		"Astro": "https://astro.build/",
 		"React Router": "https://reactrouter.com/",
 		"React Native": "https://reactnative.dev/",
-		"React": "https://react.dev/",
-		"Preact": "https://react.dev/"
+		"React JS": "https://react.dev/",
+		"Preact JS": "https://react.dev/",
+		"Solid JS": "https://www.solidjs.com/",
+		"NPM": "https://npmjs.org",
+		"Auth JS": "https://authjs.dev/",
+		"Postgres": "https://www.postgresql.org/",
+		"MongoDB": "https://www.mongodb.com/",
+		"SQLite": "https://sqlite.org/",
+		"Kysely": "https://kysely.dev/"
 	}
 }
