@@ -1,6 +1,6 @@
 import { useLocalStorage } from '@reactuses/core';
-import { ComponentChildren } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { type ComponentChildren, Fragment } from 'preact';
+import { type Dispatch, type StateUpdater, useEffect, useRef, useState } from 'preact/hooks';
 import { JSX } from 'preact/jsx-runtime';
 import wiki from 'wikipedia';
 import Cats from '@/components/cats/index.tsx';
@@ -10,19 +10,41 @@ import Lrclib from '@/components/lrclib/index.tsx';
 import Wikipedia from '@/components/wikipedia';
 import './style.css';
 
+const stringIsAValidUrl = (s: string) => {
+	try {
+		new URL(s);
+		return true;
+	} catch {
+		return false;
+	}
+};
+
+function TabbedContent(props: {
+	setActiveTab: Dispatch<StateUpdater<JSX.Element>>;
+	children: ComponentChildren;
+	component: JSX.Element;
+}) {
+	return (
+		<button onClick={() => props.setActiveTab(() => props.component)}>
+			{props.children}
+		</button>
+	);
+}
+
 export default function Home() {
 	const [nyeh, nyehHehHeh] = useState<string>('Anon');
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
-
-	function TabbedContent(props: { children: ComponentChildren; component: JSX.Element }) {
-		return (
-			<button onClick={() => setActiveTab(() => props.component)}>
-				{props.children}
-			</button>
-		);
-	}
+	const [shortcuts, setShortcuts] = useLocalStorage<{ name: string; url: string }[]>(
+		'shortcuts',
+		[
+			{ name: 'Google', url: 'https://www.google.com/' },
+			{ name: 'YouTube', url: 'https://www.youtube.com/' },
+		]
+	);
+	const shortcutNameRef = useRef<HTMLInputElement>(null);
+	const shortcutUrlRef = useRef<HTMLInputElement>(null);
 
 	const submit = (e: Event) => {
 		e.preventDefault();
@@ -39,7 +61,7 @@ export default function Home() {
 			console.error('Unable to ping wikipedia.');
 			setWikipediaAvailable(false);
 		});
-	});
+	}, []);
 
 	useEffect(() => {
 		fetch('https://ipinfo.io/json')
@@ -50,7 +72,7 @@ export default function Home() {
 			.catch((error) => {
 				console.error('Error fetching IP address:', error);
 			});
-	});
+	}, []);
 
 	return (
 		<div className='home'>
@@ -67,21 +89,103 @@ export default function Home() {
 					/>
 					<button type='submit'>Go</button>
 				</form>
+				{shortcuts.map((val, idx) => (
+					<Fragment key={`${val.name}_shortcut_${val.url}`}>
+						<a
+							href={val.url}
+							target={'_blank'}
+							rel='noopener noreferrer'>
+							{val.name}
+						</a>
+						<button
+							type='button'
+							onClick={() => {
+								setShortcuts(
+									shortcuts.filter(
+										(_, i) => i !== idx
+									)
+								);
+							}}
+							style={{ marginRight: '16px' }}>
+							x
+						</button>
+					</Fragment>
+				))}
+				{shortcuts.length > 0 ?
+					<br />
+				:	null}
+				<input
+					type='text'
+					name='shortcut_name'
+					placeholder='Google'
+					ref={shortcutNameRef}
+				/>
+				<input
+					type='text'
+					name='shortcut_url'
+					placeholder='https://www.google.com/'
+					ref={shortcutUrlRef}
+				/>
+				<button
+					onClick={() => {
+						if (
+							!(
+								shortcutNameRef.current &&
+								shortcutUrlRef.current
+							)
+						) {
+							return console.error('Refs not set');
+						}
+						if (
+							!stringIsAValidUrl(
+								shortcutUrlRef.current.value
+							)
+						) {
+							return console.error('Invalid URL');
+						}
+						if (shortcutNameRef.current.value.length < 1) {
+							return console.error(
+								'Shortcut Name Too short'
+							);
+						}
+						const newShortcut: { name: string; url: string } = {
+							name: shortcutNameRef.current.value,
+							url: shortcutUrlRef.current.value,
+						};
+						setShortcuts([...shortcuts, newShortcut]);
+					}}
+					type='button'>
+					New Shortcut
+				</button>
 			</main>
 			<section id='tabs'>
-				<TabbedContent component={<Dictionary word='hello' />}>
+				<TabbedContent
+					setActiveTab={setActiveTab}
+					component={<Dictionary word='hello' />}>
 					Dictionary
 				</TabbedContent>
 				{wikipediaAvailable && (
-					<TabbedContent component={<Wikipedia title='batman' />}>
+					<TabbedContent
+						setActiveTab={setActiveTab}
+						component={<Wikipedia title='batman' />}>
 						Wikipedia
 					</TabbedContent>
 				)}
-				<TabbedContent component={<Lrclib song='Spongebob Theme' />}>
+				<TabbedContent
+					setActiveTab={setActiveTab}
+					component={<Lrclib song='Spongebob Theme' />}>
 					Lrclib
 				</TabbedContent>
-				<TabbedContent component={<Joke />}>Joke</TabbedContent>
-				<TabbedContent component={<Cats />}>CATS</TabbedContent>
+				<TabbedContent
+					setActiveTab={setActiveTab}
+					component={<Joke />}>
+					Joke
+				</TabbedContent>
+				<TabbedContent
+					setActiveTab={setActiveTab}
+					component={<Cats />}>
+					CATS
+				</TabbedContent>
 				<div id='tabbedContent'>{activeTab}</div>
 			</section>
 		</div>
