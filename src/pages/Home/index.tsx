@@ -11,7 +11,7 @@ import Wikipedia from '@/components/wikipedia';
 import './style.css';
 
 export default function Home() {
-	const [nyeh, nyehHehHeh] = useState<string>(null);
+	const [nyeh, nyehHehHeh] = useState<string>("Anon");
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
@@ -35,7 +35,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		wiki('batman').catch(() => {
+		wiki.summary('batman').catch(() => {
 			console.error('Unable to ping wikipedia.');
 			setWikipediaAvailable(false);
 		});
@@ -55,7 +55,7 @@ export default function Home() {
 	return (
 		<div className='home'>
 			<main>
-				<h1>Welcome Home, {nyeh}</h1>
+				<h1>Welcome Back, {nyeh}!</h1>
 				<form
 					id='searchBar'
 					onSubmit={submit}>

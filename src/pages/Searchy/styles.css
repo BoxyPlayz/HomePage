@@ -3,10 +3,12 @@ ul {
 	li {
 		border-bottom: 1px solid #ccc;
 		padding-bottom: 2px;
+		min-height: 6vh;
+		font-size: 4vh;
 		a {
+			display: block;
 			text-decoration: none;
 			color: white;
-			display: block;
 		}
 	}
 	li:hover {

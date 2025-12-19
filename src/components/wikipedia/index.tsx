@@ -18,11 +18,10 @@ const Wikipedia = ({ title }: { title: string }) => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const page = await wiki.page(searchTerm);
-				const result = await page.summary();
-				setContent(result.extract);
+				const page = await wiki.summary(searchTerm);
+				setContent(page.extract);
 				setTitle(page.title);
-				setSiteURL(page.fullurl);
+				setSiteURL(page.content_urls["desktop"].page);
 				setError(null);
 			} catch (err) {
 				console.error(err);

@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useContext, useEffect, useMemo, useState } from 'preact/hooks';
 import searchyImg from '@/assets/searchy.png';
+import { SearchyContext } from '@/contexts/searchyContext';
 import { get_base_url } from '@/utils.ts';
 import './styles.css';
 
@@ -15,6 +16,19 @@ interface SearchyResult {
 export default function Searchy() {
 	const [search, setSearch] = useState('');
 	const [sortedResults, setSortedResults] = useState<SearchyResult[]>([]);
+	const ctx = useContext(SearchyContext);
+	if (!ctx) throw new Error('SearchyContext missing');
+
+	const { searchy, setSearchy } = ctx;
+
+	if (!searchy) {
+		return (
+			<>
+				<h1>Searchy is disabled</h1>
+				<button onClick={() => setSearchy(true)}>Enable Searchy</button>
+			</>
+		);
+	}
 
 	useEffect(() => {
 		const fetchSearches = async () => {

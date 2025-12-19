@@ -1,10 +1,16 @@
 import { useLocation } from 'preact-iso';
+import { useContext } from 'preact/hooks';
 import emptyImg from '@/assets/empty.png';
 import searchyImg from '@/assets/searchy.png';
 import SplashText from '@/components/SplashText/index.tsx';
+import { SearchyContext } from '@/contexts/searchyContext';
 import { addBase, get_base_url } from '@/utils.ts';
 
 export default function Header() {
+	const ctx = useContext(SearchyContext);
+	if (!ctx) throw new Error('SearchyContext missing');
+
+	const { searchy } = ctx;
 	const { url } = useLocation();
 
 	return (
@@ -20,18 +26,19 @@ export default function Header() {
 					className={url == addBase('settings') && 'active'}>
 					Konfig
 				</a>
-				<a href={addBase('searchy')}>
-					<img
-						src={
-							url == addBase('searchy') ? emptyImg : (
-								searchyImg
-							)
-						}
-						alt='Searchy the Search Thingy'
-						className='searchy'
-						style={{ width: '2rem', height: '2rem' }}
-					/>
-				</a>
+				{searchy ?
+					<a href={addBase('searchy')}>
+						<img
+							src={
+								url == addBase('searchy') ? emptyImg
+								:	searchyImg
+							}
+							alt='Searchy the Search Thingy'
+							className='searchy'
+							style={{ width: '2rem', height: '2rem' }}
+						/>
+					</a>
+				:	null}
 				<SplashText />
 			</nav>
 		</header>

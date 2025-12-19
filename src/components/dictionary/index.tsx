@@ -75,7 +75,7 @@ const Dictionary = ({ word }: { word: string }) => {
 				setError(null);
 			} catch (err) {
 				console.error(err);
-				setError('Failed to load lyrics.');
+				setError('');
 				setContent(null);
 				setTitle(null);
 				if (contentRef.current) {
