@@ -21,7 +21,7 @@ const Wikipedia = ({ title }: { title: string }) => {
 				const page = await wiki.summary(searchTerm);
 				setContent(page.extract);
 				setTitle(page.title);
-				setSiteURL(page.content_urls["desktop"].page);
+				setSiteURL(page.content_urls['desktop'].page);
 				setError(null);
 			} catch (err) {
 				console.error(err);

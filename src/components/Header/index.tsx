@@ -1,3 +1,4 @@
+import { useNetwork } from '@reactuses/core';
 import { useLocation } from 'preact-iso';
 import { useContext } from 'preact/hooks';
 import emptyImg from '@/assets/empty.png';
@@ -7,10 +8,15 @@ import { SearchyContext } from '@/contexts/searchyContext';
 import { addBase, get_base_url } from '@/utils.ts';
 
 export default function Header() {
+	const network = useNetwork();
 	const ctx = useContext(SearchyContext);
-	if (!ctx) throw new Error('SearchyContext missing');
+	let searchy: boolean;
+	if (ctx) {
+		searchy = ctx.searchy;
+	} else {
+		searchy = true;
+	}
 
-	const { searchy } = ctx;
 	const { url } = useLocation();
 
 	return (
@@ -39,6 +45,7 @@ export default function Header() {
 						/>
 					</a>
 				:	null}
+				{network.online ? null : 'No Internet'}
 				<SplashText />
 			</nav>
 		</header>

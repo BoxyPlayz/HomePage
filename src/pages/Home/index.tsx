@@ -11,7 +11,7 @@ import Wikipedia from '@/components/wikipedia';
 import './style.css';
 
 export default function Home() {
-	const [nyeh, nyehHehHeh] = useState<string>("Anon");
+	const [nyeh, nyehHehHeh] = useState<string>('Anon');
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');

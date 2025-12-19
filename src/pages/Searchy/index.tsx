@@ -42,9 +42,6 @@ export default function Searchy() {
 		fetchSearches();
 	}, []);
 
-	
-
-
 	const filteredResults = useMemo(() => {
 		const query = search.trim().toLowerCase();
 		if (query === '') return sortedResults;
@@ -54,7 +51,6 @@ export default function Searchy() {
 
 	const handleSearchChange = (e: Event) => setSearch((e.target as HTMLInputElement).value);
 
-	
 	if (!searchy) {
 		return (
 			<>

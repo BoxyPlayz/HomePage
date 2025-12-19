@@ -27,7 +27,8 @@ export function App() {
 						/>
 						<Route
 							path={addBase('settings')}
-							component={Settings} />
+							component={Settings}
+						/>
 						<Route
 							default
 							component={NotFound}

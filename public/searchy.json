@@ -78,6 +78,8 @@
 		"C++": "https://cplusplus.com/",
 		"Godot": "https://godotengine.org/",
 		"Unreal Engine": "https://www.unrealengine.com/en-US",
-		"Pygame": "https://www.pygame.org/"
+		"Pygame": "https://www.pygame.org/",
+		"Vite PWA": "https://vite-pwa-org.netlify.app/",
+		"GDK": "https://learn.microsoft.com/en-us/gaming/gdk/"
 	}
 }
