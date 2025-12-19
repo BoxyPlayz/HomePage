@@ -21,15 +21,6 @@ export default function Searchy() {
 
 	const { searchy, setSearchy } = ctx;
 
-	if (!searchy) {
-		return (
-			<>
-				<h1>Searchy is disabled</h1>
-				<button onClick={() => setSearchy(true)}>Enable Searchy</button>
-			</>
-		);
-	}
-
 	useEffect(() => {
 		const fetchSearches = async () => {
 			try {
@@ -51,6 +42,9 @@ export default function Searchy() {
 		fetchSearches();
 	}, []);
 
+	
+
+
 	const filteredResults = useMemo(() => {
 		const query = search.trim().toLowerCase();
 		if (query === '') return sortedResults;
@@ -59,6 +53,16 @@ export default function Searchy() {
 	}, [search, sortedResults]);
 
 	const handleSearchChange = (e: Event) => setSearch((e.target as HTMLInputElement).value);
+
+	
+	if (!searchy) {
+		return (
+			<>
+				<h1>Searchy is disabled</h1>
+				<button onClick={() => setSearchy(true)}>Enable Searchy</button>
+			</>
+		);
+	}
 
 	return (
 		<div>

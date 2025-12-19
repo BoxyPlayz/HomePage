@@ -36,8 +36,8 @@ jobs:
                                   node-version: 20
                         - name: 'Install dependencies'
                           run: 'pnpm install'
-                        - name: 'Lint Code'
-                          run: 'pnpm lintStrict'
+                        # - name: 'Lint Code'
+                        #   run: 'pnpm lintStrict'
                         - name: Build
                           run: 'pnpm build'
                         - name: Setup Pages

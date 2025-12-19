@@ -1,4 +1,3 @@
-import { useLocalStorage } from '@reactuses/core';
 import { render } from 'preact';
 import { ErrorBoundary, LocationProvider, Route, Router, lazy } from 'preact-iso';
 import { addBase, get_base_url } from '@/utils.ts';
@@ -12,7 +11,6 @@ const Searchy = lazy(() => import('./pages/Searchy/index.tsx'));
 const NotFound = lazy(() => import('./pages/_404.tsx'));
 
 export function App() {
-	const [searchy, setSearchy] = useLocalStorage('searchyEnabled', false);
 	return (
 		<LocationProvider>
 			<ErrorBoundary>
@@ -29,7 +27,7 @@ export function App() {
 						/>
 						<Route
 							path={addBase('settings')}
-							component={Settings}></Route>
+							component={Settings} />
 						<Route
 							default
 							component={NotFound}
