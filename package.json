@@ -19,7 +19,7 @@
 		"@reactuses/core": "^6.1.6",
 		"dotenv": "^17.2.3",
 		"lrclib-api": "^2.0.4",
-		"preact": "^10.28.0",
+		"preact": "^10.28.1",
 		"preact-iso": "^2.11.0",
 		"react": "npm:@preact/compat@^18.3.1",
 		"react-dom": "npm:@preact/compat@^18.3.1",
