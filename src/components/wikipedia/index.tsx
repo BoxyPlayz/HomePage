@@ -1,6 +1,14 @@
+import { useLocalStorage } from '@reactuses/core';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import wiki from 'wikipedia';
 import './styles.css';
+
+type wikiArticles = Record<
+	string,
+	{ summary: string; title: string; siteURI: string; time: number }
+>;
+
+const WIKI_TTL = 1000 * 60 * 60;
 
 const Wikipedia = ({ title }: { title: string }) => {
 	const [content, setContent] = useState<string | null>(null);
@@ -9,20 +17,41 @@ const Wikipedia = ({ title }: { title: string }) => {
 	const [Title, setTitle] = useState<string | null>(title);
 	const [siteURL, setSiteURL] = useState<string>(title);
 	const searchRef = useRef<HTMLInputElement>(null);
+	const [articles, setArticles] = useLocalStorage<wikiArticles>('wiki', {});
 
 	const handleSearch = () => {
-		const value = searchRef.current.value;
+		const value = searchRef.current?.value;
+		if (!value) return;
 		setSearchTerm(value);
 	};
 
 	useEffect(() => {
 		(async () => {
-			try {
-				const page = await wiki.summary(searchTerm);
-				setContent(page.extract);
-				setTitle(page.title);
-				setSiteURL(page.content_urls['desktop'].page);
+			const key = searchTerm.toLowerCase();
+			const cached = articles[key];
+			const now = Date.now();
+			if (cached && now - cached.time < WIKI_TTL) {
+				setContent(cached.summary);
+				setTitle(cached.title);
+				setSiteURL(cached.siteURI);
 				setError(null);
+				return;
+			}
+			try {
+				const page = await wiki.summary(key);
+
+				const article = {
+					summary: page.extract,
+					title: page.title,
+					siteURI: page.content_urls.desktop.page,
+					time: now,
+				};
+
+				setContent(article.summary);
+				setTitle(article.title);
+				setSiteURL(article.siteURI);
+				setError(null);
+				setArticles({ ...articles, [key]: article });
 			} catch (err) {
 				console.error(err);
 				setError('Failed to load summary.');
@@ -30,7 +59,7 @@ const Wikipedia = ({ title }: { title: string }) => {
 				setTitle(null);
 			}
 		})();
-	}, [searchTerm]);
+	}, [searchTerm, articles]);
 
 	return (
 		<div class='wikipedia-component'>
