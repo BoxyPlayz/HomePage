@@ -13,15 +13,15 @@ import './style.css';
 const IP_TTL = 1000 * 60 * 60 * 12;
 
 interface IPInfo {
-    ip:       string;
-    city?:     string;
-    region?:   string;
-    country?:  string;
-    loc?:      string;
-    org?:      string;
-    postal?:   string;
-    timezone?: string;
-    readme?:   string;
+	ip: string;
+	city?: string;
+	region?: string;
+	country?: string;
+	loc?: string;
+	org?: string;
+	postal?: string;
+	timezone?: string;
+	readme?: string;
 }
 
 const stringIsAValidUrl = (s: string) => {
@@ -46,7 +46,7 @@ function TabbedContent(props: {
 }
 
 export default function Home() {
-	const [nyeh, nyehHehHeh] = useLocalStorage("ip",{ip: 'Anon', time: 0});
+	const [nyeh, nyehHehHeh] = useLocalStorage('ip', { ip: 'Anon', time: 0 });
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
@@ -78,18 +78,16 @@ export default function Home() {
 	}, []);
 
 	useEffect(() => {
-		if (Date.now() - nyeh.time > IP_TTL){
-		fetch('https://ipinfo.io/json')
-			.then((response) => response.json())
-			.then((data: IPInfo) => {
-				nyehHehHeh({
-					ip: data.ip,
-					time: Date.now()
+		if (Date.now() - nyeh.time > IP_TTL) {
+			fetch('https://ipinfo.io/json')
+				.then((response) => response.json())
+				.then((data: IPInfo) => {
+					nyehHehHeh({ ip: data.ip, time: Date.now() });
+				})
+				.catch((error) => {
+					console.error('Error fetching IP address:', error);
 				});
-			})
-			.catch((error) => {
-				console.error('Error fetching IP address:', error);
-			});}
+		}
 	}, [nyeh]);
 
 	return (
