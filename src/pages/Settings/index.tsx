@@ -13,9 +13,12 @@ export default function Settings() {
 		'https://www.google.com/search?q='
 	);
 
+	const [autoSave, setAutoSave] = useLocalStorage('autosave', false);
+
 	return (
 		<div>
-			<h2>Konfig</h2>
+			<h1>Konfig</h1>
+			<h2>Main</h2>
 			<select
 				value={selectedEngine}
 				onChange={(e) =>
@@ -26,8 +29,14 @@ export default function Settings() {
 				<option value='https://search.yahoo.com/search?p='>Yahoo</option>
 			</select>
 			<br />
+			<h2>Searchy</h2>
 			<button onClick={() => setSearchy(!searchy)}>
 				{searchy ? 'Disable' : 'Enable'} Searchy
+			</button>
+			<br />
+			<h2>Notes</h2>
+			<button onClick={() => setAutoSave(!autoSave)}>
+				{autoSave ? 'Disable' : 'Enable'} AutoSave
 			</button>
 		</div>
 	);

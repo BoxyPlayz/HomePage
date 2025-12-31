@@ -29,6 +29,7 @@
 		"@boxyplayz/prettier-config": "^1.0.0",
 		"@eslint/js": "^9.39.2",
 		"@preact/preset-vite": "^2.10.2",
+		"@trivago/prettier-plugin-sort-imports": "^6.0.0",
 		"@vite-pwa/assets-generator": "^1.0.2",
 		"eslint": "^9.39.2",
 		"eslint-config-preact": "^2.0.0",

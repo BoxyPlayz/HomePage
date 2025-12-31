@@ -3,6 +3,7 @@ import { type ComponentChildren, Fragment } from 'preact';
 import { type Dispatch, type StateUpdater, useEffect, useRef, useState } from 'preact/hooks';
 import { JSX } from 'preact/jsx-runtime';
 import wiki from 'wikipedia';
+import Notes from '@/components/Notes';
 import Cats from '@/components/cats/index.tsx';
 import Dictionary from '@/components/dictionary/index.tsx';
 import Joke from '@/components/jokes/index.tsx';
@@ -201,6 +202,11 @@ export default function Home() {
 					setActiveTab={setActiveTab}
 					component={<Cats />}>
 					CATS
+				</TabbedContent>
+				<TabbedContent
+					setActiveTab={setActiveTab}
+					component={<Notes />}>
+					Notes
 				</TabbedContent>
 				<div id='tabbedContent'>{activeTab}</div>
 			</section>
