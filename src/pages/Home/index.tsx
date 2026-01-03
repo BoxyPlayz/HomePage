@@ -1,7 +1,7 @@
 import { useLocalStorage } from '@reactuses/core';
-import { type ComponentChildren, Fragment } from 'preact';
+import { type ComponentChildren, Fragment, type TargetedEvent } from 'preact';
 import { type Dispatch, type StateUpdater, useEffect, useRef, useState } from 'preact/hooks';
-import { JSX } from 'preact/jsx-runtime';
+import { type JSX } from 'preact/jsx-runtime';
 import wiki from 'wikipedia';
 import Notes from '@/components/Notes';
 import Cats from '@/components/cats/index.tsx';
@@ -9,6 +9,7 @@ import Dictionary from '@/components/dictionary/index.tsx';
 import Joke from '@/components/jokes/index.tsx';
 import Lrclib from '@/components/lrclib/index.tsx';
 import Wikipedia from '@/components/wikipedia';
+import modular from './modular.module.css';
 import './style.css';
 
 const IP_TTL = 1000 * 60 * 60 * 12;
@@ -25,7 +26,7 @@ interface IPInfo {
 	readme?: string;
 }
 
-const stringIsAValidUrl = (s: string) => {
+const isValidUrl = (s: string) => {
 	try {
 		new URL(s);
 		return true;
@@ -47,7 +48,7 @@ function TabbedContent(props: {
 }
 
 export default function Home() {
-	const [nyeh, nyehHehHeh] = useLocalStorage('ip', { ip: 'Anon', time: 0 });
+	const [nyeh, NyehFunc] = useLocalStorage('ip', { ip: 'Anon', time: 0 });
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
 	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
@@ -60,8 +61,9 @@ export default function Home() {
 	);
 	const shortcutNameRef = useRef<HTMLInputElement>(null);
 	const shortcutUrlRef = useRef<HTMLInputElement>(null);
+	const [error, setError] = useState('');
 
-	const submit = (e: Event) => {
+	const submit = (e: TargetedEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const form = e.currentTarget as HTMLFormElement;
 		const data = new FormData(form);
@@ -83,13 +85,13 @@ export default function Home() {
 			fetch('https://ipinfo.io/json')
 				.then((response) => response.json())
 				.then((data: IPInfo) => {
-					nyehHehHeh({ ip: data.ip, time: Date.now() });
+					NyehFunc({ ip: data.ip, time: Date.now() });
 				})
 				.catch((error) => {
 					console.error('Error fetching IP address:', error);
 				});
 		}
-	}, [nyeh]);
+	}, [nyeh.time, NyehFunc]);
 
 	return (
 		<div className='home'>
@@ -110,7 +112,7 @@ export default function Home() {
 					<Fragment key={`${val.name}_shortcut_${val.url}`}>
 						<a
 							href={val.url}
-							target={'_blank'}
+							target='_blank'
 							rel='noopener noreferrer'>
 							{val.name}
 						</a>
@@ -131,6 +133,7 @@ export default function Home() {
 				{shortcuts.length > 0 ?
 					<br />
 				:	null}
+
 				<input
 					type='text'
 					name='shortcut_name'
@@ -151,29 +154,27 @@ export default function Home() {
 								shortcutUrlRef.current
 							)
 						) {
-							return console.error('Refs not set');
+							return setError('Refs not set');
 						}
-						if (
-							!stringIsAValidUrl(
-								shortcutUrlRef.current.value
-							)
-						) {
-							return console.error('Invalid URL');
+						if (!isValidUrl(shortcutUrlRef.current.value)) {
+							return setError('Invalid URL');
 						}
 						if (shortcutNameRef.current.value.length < 1) {
-							return console.error(
-								'Shortcut Name Too short'
-							);
+							return setError('Shortcut Name Too short');
 						}
+						setError('');
 						const newShortcut: { name: string; url: string } = {
 							name: shortcutNameRef.current.value,
 							url: shortcutUrlRef.current.value,
 						};
+						shortcutNameRef.current.value = '';
+						shortcutUrlRef.current.value = '';
 						setShortcuts([...shortcuts, newShortcut]);
 					}}
 					type='button'>
 					New Shortcut
 				</button>
+				<p className={modular.error}>{error}</p>
 			</main>
 			<section id='tabs'>
 				<TabbedContent

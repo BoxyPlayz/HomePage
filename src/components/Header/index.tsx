@@ -1,5 +1,5 @@
 import { useNetwork } from '@reactuses/core';
-import { useLocation } from 'preact-iso';
+import { useLocation } from 'preact-iso/router';
 import { useContext } from 'preact/hooks';
 import emptyImg from '@/assets/empty.png';
 import searchyImg from '@/assets/searchy.png';

@@ -59,7 +59,7 @@ const Wikipedia = ({ title }: { title: string }) => {
 				setTitle(null);
 			}
 		})();
-	}, [searchTerm, articles]);
+	}, [searchTerm, articles, setArticles]);
 
 	return (
 		<div class='wikipedia-component'>

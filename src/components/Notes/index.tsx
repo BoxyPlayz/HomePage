@@ -10,7 +10,7 @@ export default function Notes() {
 		setText(savedText);
 	}, [savedText]);
 
-    const handleInput = (e: Event) => {
+	const handleInput = (e: Event) => {
 		const value = (e.currentTarget as HTMLTextAreaElement).value;
 		setText(value);
 		if (autoSave) setSavedText(value);
@@ -21,12 +21,14 @@ export default function Notes() {
 			<textarea
 				value={text}
 				onInput={handleInput}
-				style={{
-					width: "100vw",
-					height: "50vh"
-				}}
+				style={{ width: '100vw', height: '50vh' }}
 			/>
-			{autoSave ? null : <><br /><button onClick={() => setSavedText(text)}>Save</button></>}
+			{autoSave ? null : (
+				<>
+					<br />
+					<button onClick={() => setSavedText(text)}>Save</button>
+				</>
+			)}
 		</div>
 	);
 }
