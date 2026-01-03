@@ -24,9 +24,12 @@ export default function Settings() {
 				onChange={(e) =>
 					setSelectedEngine((e.target as HTMLSelectElement).value)
 				}>
+					<optgroup label="Common">
 				<option value='https://www.google.com/search?q='>Google</option>
 				<option value='https://www.bing.com/search?q='>Bing</option>
 				<option value='https://search.yahoo.com/search?p='>Yahoo</option>
+					</optgroup>
+				<option value="https://www.youtube.com/results?search_query=">YouTube</option>
 			</select>
 			<br />
 			<h2>Searchy</h2>

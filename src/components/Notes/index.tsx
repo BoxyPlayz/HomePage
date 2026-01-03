@@ -18,11 +18,15 @@ export default function Notes() {
 
 	return (
 		<div>
-			{autoSave ? null : <button onClick={() => setSavedText(text)}>Save</button>}
 			<textarea
 				value={text}
 				onInput={handleInput}
+				style={{
+					width: "100vw",
+					height: "50vh"
+				}}
 			/>
+			{autoSave ? null : <><br /><button onClick={() => setSavedText(text)}>Save</button></>}
 		</div>
 	);
 }
