@@ -83,7 +83,7 @@ export default function Searchy() {
 			<ul>
 				{filteredResults.map((result) => (
 					<li key={result.url}>
-						<a href={result.url}>{result.name}</a>
+						<a target='_blank' rel="noopener noreferrer" href={result.url}>{result.name}</a>
 					</li>
 				))}
 			</ul>
