@@ -80,6 +80,16 @@
 		"Unreal Engine": "https://www.unrealengine.com/en-US",
 		"Pygame": "https://www.pygame.org/",
 		"Vite PWA": "https://vite-pwa-org.netlify.app/",
-		"GDK": "https://learn.microsoft.com/en-us/gaming/gdk/"
+		"GDK": "https://learn.microsoft.com/en-us/gaming/gdk/",
+		"TypeORM": "https://typeorm.io/",
+		"Prodigy": "https://play.prodigygame.com/",
+		"MySQL": "https://www.mysql.com/",
+		"Postgres Lite": "https://pglite.dev/",
+		"Linux": "https://www.linux.org/",
+		"Poland": "https://www.gov.pl/",
+		"USA": "https://www.usa.gov/",
+		"The British": "https://www.gov.uk/",
+		"SETI": "https://www.seti.org/",
+		"Rusticraft": "https://rusticraft.github.io/"
 	}
 }
