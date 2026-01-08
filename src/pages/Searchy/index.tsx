@@ -14,7 +14,7 @@ interface SearchyResult {
 }
 
 export default function Searchy() {
-	const [search, setSearch] = useState<string>(null);
+	const [search, setSearch] = useState<string>('');
 	const [sortedResults, setSortedResults] = useState<SearchyResult[]>([]);
 	const ctx = useContext(SearchyContext);
 	if (!ctx) throw new Error('SearchyContext missing');
@@ -49,12 +49,17 @@ export default function Searchy() {
 		return sortedResults.filter(({ name }) => name.toLowerCase().includes(query));
 	}, [search, sortedResults]);
 
-	const handleSearchChange = (e: InputEvent) => setSearch((e.target as HTMLInputElement).value);
+	const handleSearchChange = (e: InputEvent) => {
+		const searchX = (e.target as HTMLInputElement).value
+		if (searchX != null) {setSearch(searchX)}
+		
+	};
 
 	if (!searchy) {
 		return (
 			<>
-				<h1>Searchy is disabled</h1>
+			<h1>Uh oh!</h1>
+				<h2>Searchy is disabled</h2>
 				<button onClick={() => setSearchy(true)}>Enable Searchy</button>
 			</>
 		);
