@@ -8,12 +8,12 @@ export default function Settings() {
 
 	const { searchy, setSearchy } = ctx;
 
-	const [selectedEngine, setSelectedEngine] = useLocalStorage(
+	const [selectedEngine, setSelectedEngine] = useLocalStorage<string>(
 		'searchURI',
 		'https://www.google.com/search?q='
 	);
 
-	const [autoSave, setAutoSave] = useLocalStorage('autosave', false);
+	const [autoSave, setAutoSave] = useLocalStorage<boolean>('autosave', false);
 
 	return (
 		<div>

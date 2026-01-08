@@ -1,4 +1,4 @@
-import { useNetwork } from '@reactuses/core';
+import { type IUseNetworkState, useNetwork } from '@reactuses/core';
 import { useLocation } from 'preact-iso/router';
 import { useContext } from 'preact/hooks';
 import emptyImg from '@/assets/empty.png';
@@ -8,7 +8,7 @@ import { SearchyContext } from '@/contexts/searchyContext';
 import { addBase, get_base_url } from '@/utils.ts';
 
 export default function Header() {
-	const network = useNetwork();
+	const network: IUseNetworkState = useNetwork();
 	const ctx = useContext(SearchyContext);
 	let searchy: boolean;
 	if (ctx) {

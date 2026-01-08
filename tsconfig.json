@@ -1,4 +1,7 @@
 {
+	"exclude": [
+		"dist/"
+	],
 	"compilerOptions": {
 		"target": "ES2020",
 		"module": "ESNext",
@@ -7,6 +10,7 @@
 		"allowJs": true,
 		"checkJs": true,
 		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
 
 		/* Preact Config */
 		"jsx": "react-jsx",

@@ -83,7 +83,6 @@
 		"GDK": "https://learn.microsoft.com/en-us/gaming/gdk/",
 		"TypeORM": "https://typeorm.io/",
 		"Prodigy": "https://play.prodigygame.com/",
-		"MySQL": "https://www.mysql.com/",
 		"Postgres Lite": "https://pglite.dev/",
 		"Linux": "https://www.linux.org/",
 		"Poland": "https://www.gov.pl/",
@@ -93,6 +92,7 @@
 		"Rusticraft": "https://rusticraft.github.io/",
 		"DistroChooser": "https://distrochooser.de/",
 		"Germany": "https://www.deutschland.de/en",
-		"Japan": "https://www.japan.go.jp/"
+		"Japan": "https://www.japan.go.jp/",
+		"StackOverflow": "https://stackoverflow.com/"
 	}
 }
