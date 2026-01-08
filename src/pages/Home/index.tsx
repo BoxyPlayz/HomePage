@@ -10,6 +10,7 @@ import Joke from '@/components/jokes/index.tsx';
 import Lrclib from '@/components/lrclib/index.tsx';
 import Wikipedia from '@/components/wikipedia';
 import modular from './modular.module.css';
+import { signal } from '@preact/signals';
 import './style.css';
 
 const IP_TTL = 1000 * 60 * 60 * 12;
@@ -61,7 +62,7 @@ export default function Home() {
 	);
 	const shortcutNameRef = useRef<HTMLInputElement>(null);
 	const shortcutUrlRef = useRef<HTMLInputElement>(null);
-	const [error, setError] = useState('');
+	const error = signal('');
 
 	const submit = (e: TargetedEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -154,15 +155,15 @@ export default function Home() {
 								shortcutUrlRef.current
 							)
 						) {
-							return setError('Refs not set');
+							return error.value = 'Refs not set';
 						}
 						if (!isValidUrl(shortcutUrlRef.current.value)) {
-							return setError('Invalid URL');
+							return error.value ='Invalid URL';
 						}
 						if (shortcutNameRef.current.value.length < 1) {
-							return setError('Shortcut Name Too short');
+							return error.value = 'Shortcut Name Too short';
 						}
-						setError('');
+						error.value = '';
 						const newShortcut: { name: string; url: string } = {
 							name: shortcutNameRef.current.value,
 							url: shortcutUrlRef.current.value,
