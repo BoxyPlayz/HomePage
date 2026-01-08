@@ -50,15 +50,16 @@ export default function Searchy() {
 	}, [search, sortedResults]);
 
 	const handleSearchChange = (e: InputEvent) => {
-		const searchX = (e.target as HTMLInputElement).value
-		if (searchX != null) {setSearch(searchX)}
-		
+		const searchX = (e.target as HTMLInputElement).value;
+		if (searchX != null) {
+			setSearch(searchX);
+		}
 	};
 
 	if (!searchy) {
 		return (
 			<>
-			<h1>Uh oh!</h1>
+				<h1>Uh oh!</h1>
 				<h2>Searchy is disabled</h2>
 				<button onClick={() => setSearchy(true)}>Enable Searchy</button>
 			</>
@@ -83,13 +84,18 @@ export default function Searchy() {
 					color: 'black',
 					verticalAlign: 'middle',
 					display: 'inline-block',
-					height: "3vh"
+					height: '3vh',
 				}}
 			/>
 			<ul>
 				{filteredResults.map((result) => (
 					<li key={result.url}>
-						<a target='_blank' rel="noopener noreferrer" href={result.url}>{result.name}</a>
+						<a
+							target='_blank'
+							rel='noopener noreferrer'
+							href={result.url}>
+							{result.name}
+						</a>
 					</li>
 				))}
 			</ul>

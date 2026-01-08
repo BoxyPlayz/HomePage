@@ -7,11 +7,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
 	base: '/HomePage/',
 	appType: 'spa',
-	build: {
-		rollupOptions: {
-			input: { main: 'index.html', notfound: '404.html' },
-		},
-	},
+	build: { rollupOptions: { input: { main: 'index.html', notfound: '404.html' } } },
 	resolve: { alias: { '@/': '/src/' } },
 	server: { port: 8000 },
 	preview: { port: 8000 },
