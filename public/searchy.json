@@ -93,6 +93,9 @@
 		"DistroChooser": "https://distrochooser.de/",
 		"Germany": "https://www.deutschland.de/en",
 		"Japan": "https://www.japan.go.jp/",
-		"StackOverflow": "https://stackoverflow.com/"
+		"StackOverflow": "https://stackoverflow.com/",
+		"Prisma ORM": "https://www.prisma.io/",
+		"Drizzle ORM": "https://orm.drizzle.team/",
+		"Sequelize ORM": "https://sequelize.org/"
 	}
 }
