@@ -1,5 +1,5 @@
-import { useLocalStorage } from '@reactuses/core';
 import { useEffect, useState } from 'preact/hooks';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function Notes() {
 	const [savedText, setSavedText] = useLocalStorage('note', '');

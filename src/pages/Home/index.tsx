@@ -1,16 +1,15 @@
-import { useLocalStorage } from '@reactuses/core';
+import { signal } from '@preact/signals';
 import { type ComponentChildren, Fragment, type TargetedEvent } from 'preact';
 import { type Dispatch, type StateUpdater, useEffect, useRef, useState } from 'preact/hooks';
 import { type JSX } from 'preact/jsx-runtime';
-import wiki from 'wikipedia';
 import Notes from '@/components/Notes';
 import Cats from '@/components/cats/index.tsx';
 import Dictionary from '@/components/dictionary/index.tsx';
 import Joke from '@/components/jokes/index.tsx';
 import Lrclib from '@/components/lrclib/index.tsx';
 import Wikipedia from '@/components/wikipedia';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import modular from './modular.module.css';
-import { signal } from '@preact/signals';
 import './style.css';
 
 const IP_TTL = 1000 * 60 * 60 * 12;
@@ -75,7 +74,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		wiki.summary('batman').catch(() => {
+		fetch('https://en.wikipedia.org/api/rest_v1/page/').catch(() => {
 			console.error('Unable to ping wikipedia.');
 			setWikipediaAvailable(false);
 		});
@@ -155,13 +154,14 @@ export default function Home() {
 								shortcutUrlRef.current
 							)
 						) {
-							return error.value = 'Refs not set';
+							return (error.value = 'Refs not set');
 						}
 						if (!isValidUrl(shortcutUrlRef.current.value)) {
-							return error.value ='Invalid URL';
+							return (error.value = 'Invalid URL');
 						}
 						if (shortcutNameRef.current.value.length < 1) {
-							return error.value = 'Shortcut Name Too short';
+							return (error.value =
+								'Shortcut Name Too short');
 						}
 						error.value = '';
 						const newShortcut: { name: string; url: string } = {

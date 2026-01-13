@@ -1,6 +1,6 @@
-import { useLocalStorage } from '@reactuses/core';
 import { useContext } from 'preact/hooks';
 import { SearchyContext } from '@/contexts/searchyContext';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function Settings() {
 	const ctx = useContext(SearchyContext);

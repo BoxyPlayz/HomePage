@@ -1,5 +1,5 @@
-import { useLocalStorage } from '@reactuses/core';
 import { type ComponentChildren, createContext } from 'preact';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export const SearchyContext = createContext<{
 	searchy: boolean;

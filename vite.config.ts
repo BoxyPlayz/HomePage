@@ -7,7 +7,62 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
 	base: '/HomePage/',
 	appType: 'spa',
-	build: { rollupOptions: { input: { main: 'index.html', notfound: '404.html' } } },
+	build: {
+		rollupOptions: {
+			input: { main: 'index.html', notfound: '404.html' },
+			output: {
+				manualChunks: function manualChunks(id) {
+					if (id.includes('iso')) {
+						return 'preact-iso';
+					}
+					if (id.includes('preact')) {
+						return 'preact';
+					}
+					if (id.includes('node_modules')) {
+						return 'vendor';
+					}
+					if (id.includes('hooks')) {
+						return 'hooks'
+					}
+					if (id.includes('cat')) {
+						return 'cat'
+					}
+					if (id.includes('header')) {
+						return 'head'
+					}
+					if (id.includes('dictionary')) {
+						return 'dictionary'
+					}
+					if (id.includes('notes')) {
+						return 'notes'
+					}
+					if (id.includes('wiki')) {
+						return 'wiki'
+					}
+					if (id.includes('lrclib')) {
+						return 'lrclib'
+					}
+					if (id.includes('Splash')) {
+						return 'splash'
+					}
+					if (id.includes('jokes')) {
+						return 'jokes'
+					}
+					if (id.includes('home')) {
+						return 'home'
+					}
+					if (id.includes('searchy')) {
+						return 'searchy'
+					}
+					if (id.includes('settings')) {
+						return 'konfig'
+					}
+
+					return null;
+				},
+			},
+		},
+	},
 	resolve: { alias: { '@/': '/src/' } },
 	server: { port: 8000 },
 	preview: { port: 8000 },

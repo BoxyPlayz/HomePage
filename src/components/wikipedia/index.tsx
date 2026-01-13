@@ -1,7 +1,7 @@
-import { useLocalStorage } from '@reactuses/core';
 import { useEffect, useRef, useState } from 'preact/hooks';
-import wiki from 'wikipedia';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import './styles.css';
+import type { Summary } from './wiki';
 
 type wikiArticles = Record<
 	string,
@@ -38,7 +38,11 @@ const Wikipedia = ({ title }: { title: string }) => {
 				return;
 			}
 			try {
-				const page = await wiki.summary(key);
+				const page: Summary = await (
+					await fetch(
+						`https://en.wikipedia.org/api/rest_v1/page/summary/${key}`
+					)
+				).json();
 
 				const article = {
 					summary: page.extract,
