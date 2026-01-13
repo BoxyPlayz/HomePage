@@ -22,40 +22,40 @@ export default defineConfig({
 						return 'vendor';
 					}
 					if (id.includes('hooks')) {
-						return 'hooks'
+						return 'hooks';
 					}
 					if (id.includes('cat')) {
-						return 'cat'
+						return 'cat';
 					}
 					if (id.includes('header')) {
-						return 'head'
+						return 'head';
 					}
 					if (id.includes('dictionary')) {
-						return 'dictionary'
+						return 'dictionary';
 					}
 					if (id.includes('notes')) {
-						return 'notes'
+						return 'notes';
 					}
 					if (id.includes('wiki')) {
-						return 'wiki'
+						return 'wiki';
 					}
 					if (id.includes('lrclib')) {
-						return 'lrclib'
+						return 'lrclib';
 					}
 					if (id.includes('Splash')) {
-						return 'splash'
+						return 'splash';
 					}
 					if (id.includes('jokes')) {
-						return 'jokes'
+						return 'jokes';
 					}
 					if (id.includes('home')) {
-						return 'home'
+						return 'home';
 					}
 					if (id.includes('searchy')) {
-						return 'searchy'
+						return 'searchy';
 					}
 					if (id.includes('settings')) {
-						return 'konfig'
+						return 'konfig';
 					}
 
 					return null;

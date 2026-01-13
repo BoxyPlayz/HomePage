@@ -1,4 +1,3 @@
-import { signal } from '@preact/signals';
 import { type ComponentChildren, Fragment, type TargetedEvent } from 'preact';
 import { type Dispatch, type StateUpdater, useEffect, useRef, useState } from 'preact/hooks';
 import { type JSX } from 'preact/jsx-runtime';
@@ -61,7 +60,7 @@ export default function Home() {
 	);
 	const shortcutNameRef = useRef<HTMLInputElement>(null);
 	const shortcutUrlRef = useRef<HTMLInputElement>(null);
-	const error = signal('');
+	const [error, setError] = useState('');
 
 	const submit = (e: TargetedEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -154,16 +153,15 @@ export default function Home() {
 								shortcutUrlRef.current
 							)
 						) {
-							return (error.value = 'Refs not set');
+							return setError('Refs not set');
 						}
 						if (!isValidUrl(shortcutUrlRef.current.value)) {
-							return (error.value = 'Invalid URL');
+							return setError('Invalid URL');
 						}
 						if (shortcutNameRef.current.value.length < 1) {
-							return (error.value =
-								'Shortcut Name Too short');
+							return setError('Shortcut Name Too short');
 						}
-						error.value = '';
+						setError('');
 						const newShortcut: { name: string; url: string } = {
 							name: shortcutNameRef.current.value,
 							url: shortcutUrlRef.current.value,
