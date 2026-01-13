@@ -3,6 +3,7 @@ import searchyImg from '@/assets/searchy.png';
 import { SearchyContext } from '@/contexts/searchyContext';
 import { get_base_url } from '@/utils.ts';
 import './styles.css';
+import SearchyData from "./searchy.json"
 
 interface Searchy {
 	searches: Record<string, string>;
@@ -24,8 +25,7 @@ export default function Searchy() {
 	useEffect(() => {
 		const fetchSearches = async () => {
 			try {
-				const res = await fetch(`${get_base_url()}searchy.json`);
-				const data: Searchy = await res.json();
+				const data: Searchy = SearchyData;
 				setSortedResults(
 					Object.entries(data.searches)
 						.sort(([a], [b]) =>
