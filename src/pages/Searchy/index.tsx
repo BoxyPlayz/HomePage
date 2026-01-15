@@ -1,9 +1,8 @@
 import { useContext, useEffect, useMemo, useState } from 'preact/hooks';
 import searchyImg from '@/assets/searchy.png';
 import { SearchyContext } from '@/contexts/searchyContext';
-import { get_base_url } from '@/utils.ts';
+import SearchyData from './searchy.json';
 import './styles.css';
-import SearchyData from "./searchy.json"
 
 interface Searchy {
 	searches: Record<string, string>;

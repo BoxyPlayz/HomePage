@@ -43,7 +43,7 @@ export function useLocalStorage<T = string>(
 
 		window.addEventListener('storage', onStorage);
 		return () => window.removeEventListener('storage', onStorage);
-	}, [key]);
+	}, [key, initialValue]);
 
 	return [storedValue, setValue];
 }
