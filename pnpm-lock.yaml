@@ -34,7 +34,7 @@ importers:
                                 version: 9.39.2
                         '@preact/preset-vite':
                                 specifier: ^2.10.2
-                                version: 2.10.2(@babel/core@7.28.6)(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))
+                                version: 2.10.2(@babel/core@7.28.6)(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))
                         '@trivago/prettier-plugin-sort-imports':
                                 specifier: ^6.0.2
                                 version: 6.0.2(prettier@3.8.0)
@@ -67,10 +67,10 @@ importers:
                                 version: 8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
                         vite:
                                 specifier: ^7.3.1
-                                version: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
+                                version: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)
                         vite-plugin-pwa:
                                 specifier: ^1.2.0
-                                version: 1.2.0(@vite-pwa/assets-generator@1.0.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))(workbox-build@7.4.0)(workbox-window@7.4.0)
+                                version: 1.2.0(@vite-pwa/assets-generator@1.0.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))(workbox-build@7.4.0)(workbox-window@7.4.0)
 
 packages:
         '@apideck/better-ajv-errors@0.3.6':
@@ -2346,10 +2346,10 @@ packages:
                                 integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==,
                         }
 
-        baseline-browser-mapping@2.9.14:
+        baseline-browser-mapping@2.9.15:
                 resolution:
                         {
-                                integrity: sha512-B0xUquLkiGLgHhpPBqvl7GWegWBUNuujQ6kXd/r1U38ElPT6Ok8KZ8e+FpUGEc2ZoRQUzq/aUnaKFc/svWUGSg==,
+                                integrity: sha512-kX8h7K2srmDyYnXRIppo4AH/wYgzWVCs+eKr3RusRSQ5PvRYoEFmR/I0PbdTjKFAoKqp5+kbxnNTFO9jOfSVJg==,
                         }
                 hasBin: true
 
@@ -4520,10 +4520,10 @@ packages:
                         }
                 engines: { node: '>=10' }
 
-        terser@5.44.1:
+        terser@5.46.0:
                 resolution:
                         {
-                                integrity: sha512-t/R3R/n0MSwnnazuPpPNVO60LX0SKL45pyl9YlvxIdkH0Of7D5qM2EVe+yASRIlY5pZ73nclYJfNANGWPwFDZw==,
+                                integrity: sha512-jTwoImyr/QbOWFFso3YoU3ik0jBBDJ6JTOQiy/J2YxVJdZCc+5u7skhNwiOR3FQIygFqVUPHl7qbbxtjW2K3Qg==,
                         }
                 engines: { node: '>=10' }
                 hasBin: true
@@ -6021,18 +6021,18 @@ snapshots:
                 dependencies:
                         preact: 10.28.2
 
-        '@preact/preset-vite@2.10.2(@babel/core@7.28.6)(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))':
+        '@preact/preset-vite@2.10.2(@babel/core@7.28.6)(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))':
                 dependencies:
                         '@babel/core': 7.28.6
                         '@babel/plugin-transform-react-jsx': 7.28.6(@babel/core@7.28.6)
                         '@babel/plugin-transform-react-jsx-development': 7.27.1(@babel/core@7.28.6)
-                        '@prefresh/vite': 2.4.11(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))
+                        '@prefresh/vite': 2.4.11(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))
                         '@rollup/pluginutils': 4.2.1
                         babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.28.6)
                         debug: 4.4.3
                         picocolors: 1.1.1
-                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
-                        vite-prerender-plugin: 0.5.12(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))
+                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)
+                        vite-prerender-plugin: 0.5.12(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))
                 transitivePeerDependencies:
                         - preact
                         - supports-color
@@ -6045,7 +6045,7 @@ snapshots:
 
         '@prefresh/utils@1.2.1': {}
 
-        '@prefresh/vite@2.4.11(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))':
+        '@prefresh/vite@2.4.11(preact@10.28.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))':
                 dependencies:
                         '@babel/core': 7.28.6
                         '@prefresh/babel-plugin': 0.5.2
@@ -6053,7 +6053,7 @@ snapshots:
                         '@prefresh/utils': 1.2.1
                         '@rollup/pluginutils': 4.2.1
                         preact: 10.28.2
-                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
+                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)
                 transitivePeerDependencies:
                         - supports-color
 
@@ -6090,7 +6090,7 @@ snapshots:
                 dependencies:
                         serialize-javascript: 6.0.2
                         smob: 1.5.0
-                        terser: 5.44.1
+                        terser: 5.46.0
                 optionalDependencies:
                         rollup: 2.79.2
 
@@ -6453,7 +6453,7 @@ snapshots:
 
         balanced-match@1.0.2: {}
 
-        baseline-browser-mapping@2.9.14: {}
+        baseline-browser-mapping@2.9.15: {}
 
         boolbase@1.0.0: {}
 
@@ -6468,7 +6468,7 @@ snapshots:
 
         browserslist@4.28.1:
                 dependencies:
-                        baseline-browser-mapping: 2.9.14
+                        baseline-browser-mapping: 2.9.15
                         caniuse-lite: 1.0.30001764
                         electron-to-chromium: 1.5.267
                         node-releases: 2.0.27
@@ -7900,7 +7900,7 @@ snapshots:
                         type-fest: 0.16.0
                         unique-string: 2.0.0
 
-        terser@5.44.1:
+        terser@5.46.0:
                 dependencies:
                         '@jridgewell/source-map': 0.3.11
                         acorn: 8.15.0
@@ -8025,12 +8025,12 @@ snapshots:
                 dependencies:
                         punycode: 2.3.1
 
-        vite-plugin-pwa@1.2.0(@vite-pwa/assets-generator@1.0.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))(workbox-build@7.4.0)(workbox-window@7.4.0):
+        vite-plugin-pwa@1.2.0(@vite-pwa/assets-generator@1.0.2)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0))(workbox-build@7.4.0)(workbox-window@7.4.0):
                 dependencies:
                         debug: 4.4.3
                         pretty-bytes: 6.1.1
                         tinyglobby: 0.2.15
-                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
+                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)
                         workbox-build: 7.4.0
                         workbox-window: 7.4.0
                 optionalDependencies:
@@ -8038,7 +8038,7 @@ snapshots:
                 transitivePeerDependencies:
                         - supports-color
 
-        vite-prerender-plugin@0.5.12(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)):
+        vite-prerender-plugin@0.5.12(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)):
                 dependencies:
                         kolorist: 1.8.0
                         magic-string: 0.30.21
@@ -8046,9 +8046,9 @@ snapshots:
                         simple-code-frame: 1.3.0
                         source-map: 0.7.6
                         stack-trace: 1.0.0-pre2
-                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
+                        vite: 7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)
 
-        vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1):
+        vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0):
                 dependencies:
                         esbuild: 0.27.2
                         fdir: 6.5.0(picomatch@4.0.3)
@@ -8060,7 +8060,7 @@ snapshots:
                         fsevents: 2.3.3
                         jiti: 2.6.1
                         lightningcss: 1.30.2
-                        terser: 5.44.1
+                        terser: 5.46.0
 
         webidl-conversions@4.0.2: {}
 
