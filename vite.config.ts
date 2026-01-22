@@ -15,7 +15,7 @@ export default defineConfig({
 					if (id.includes('iso')) {
 						return 'preact-iso';
 					}
-					if (id.includes("compat") {
+					if (id.includes("compat")) {
 						return "compat"
 					}
 					if (id.includes('preact')) {
