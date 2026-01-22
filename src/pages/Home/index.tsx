@@ -73,9 +73,9 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		fetch('https://en.wikipedia.org/api/rest_v1/page/').catch(() => {
+		fetch('https://en.wikipedia.org/api/rest_v1/page/').then(() => {}).catch(() => {
 			console.error('Unable to ping wikipedia.');
-			// setWikipediaAvailable(false);
+			setWikipediaAvailable(false);
 		});
 	}, []);
 
