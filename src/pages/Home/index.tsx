@@ -6,7 +6,7 @@ import Cats from '@/components/cats/index.tsx';
 import Dictionary from '@/components/dictionary/index.tsx';
 import Joke from '@/components/jokes/index.tsx';
 import Lrclib from '@/components/lrclib/index.tsx';
-import Wikipedia from '@/components/wikipedia';
+// import Wikipedia from '@/components/wikipedia';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import modular from './modular.module.css';
 import './style.css';
@@ -49,7 +49,7 @@ function TabbedContent(props: {
 export default function Home() {
 	const [nyeh, NyehFunc] = useLocalStorage('ip', { ip: 'Anon', time: 0 });
 	const [activeTab, setActiveTab] = useState<JSX.Element>(<></>);
-	const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
+	// const [wikipediaAvailable, setWikipediaAvailable] = useState(true);
 	const [selectedEngine] = useLocalStorage('searchURI', 'https://www.google.com/search?q=');
 	const [shortcuts, setShortcuts] = useLocalStorage<{ name: string; url: string }[]>(
 		'shortcuts',
@@ -72,12 +72,12 @@ export default function Home() {
 		if (newWin) newWin.focus();
 	};
 
-	useEffect(() => {
+	/* useEffect(() => {
 		fetch('https://en.wikipedia.org/api/rest_v1/page/').then(() => {}).catch(() => {
 			console.error('Unable to ping wikipedia.');
 			setWikipediaAvailable(false);
 		});
-	}, []);
+	}, []); */
 
 	useEffect(() => {
 		if (Date.now() - nyeh.time > IP_TTL) {
@@ -181,13 +181,13 @@ export default function Home() {
 					component={<Dictionary word='hello' />}>
 					Dictionary
 				</TabbedContent>
-				{wikipediaAvailable && (
+				{/* wikipediaAvailable && (
 					<TabbedContent
 						setActiveTab={setActiveTab}
 						component={<Wikipedia title='batman' />}>
 						Wikipedia
 					</TabbedContent>
-				)}
+				) */}
 				<TabbedContent
 					setActiveTab={setActiveTab}
 					component={<Lrclib song='Spongebob Theme' />}>
