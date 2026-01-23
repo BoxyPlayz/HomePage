@@ -1,7 +1,18 @@
 {
-	"searches": {
-		"Google": "https://www.google.com/",
-		"Better Auth": "https://www.better-auth.com/",
+	"searches": [{
+		"name": "Google",
+		"url": "https://www.google.com/"
+	},
+	{
+		"name": "Better Auth",
+		"url": "https://www.better-auth.com/"
+	},
+	{
+		"name": "Github",
+		"url": "https://github.com/"
+	}
+]
+	/*{
 		"Github": "https://github.com/",
 		"Vite": "https://vite.dev/",
 		"Next JS": "https://nextjs.org/",
@@ -97,5 +108,5 @@
 		"Prisma ORM": "https://www.prisma.io/",
 		"Drizzle ORM": "https://orm.drizzle.team/",
 		"Sequelize ORM": "https://sequelize.org/"
-	}
+	}*/
 }

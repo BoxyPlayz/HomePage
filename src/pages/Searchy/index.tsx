@@ -5,7 +5,7 @@ import SearchyData from './searchy.json';
 import './styles.css';
 
 interface Searchy {
-	searches: Record<string, string>;
+	searches: {name: string; url: string}[];
 }
 
 interface SearchyResult {
@@ -26,13 +26,9 @@ export default function Searchy() {
 			try {
 				const data: Searchy = SearchyData;
 				setSortedResults(
-					Object.entries(data.searches)
-						.sort(([a], [b]) =>
-							a.localeCompare(b, undefined, {
-								sensitivity: 'base',
-							})
-						)
-						.map(([name, url]) => ({ name, url }))
+					data.searches.sort((a, b) => a.name.localeCompare(b.name, undefined, {
+						sensitivity: 'base'
+					}))
 				);
 			} catch (err) {
 				console.error(err);
