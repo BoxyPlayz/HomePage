@@ -1,113 +1,396 @@
 {
-	"searches": [{
-		"name": "Google",
-		"url": "https://www.google.com/"
-	},
-	{
-		"name": "Better Auth",
-		"url": "https://www.better-auth.com/"
-	},
-	{
-		"name": "Github",
-		"url": "https://github.com/"
-	}
-]
-	/*{
-		"Github": "https://github.com/",
-		"Vite": "https://vite.dev/",
-		"Next JS": "https://nextjs.org/",
-		"JS Paint": "https://jspaint.app/",
-		"Express JS": "https://expressjs.com/",
-		"TypeScript": "https://www.typescriptlang.org/",
-		"Neoforged ModLoader": "https://neoforged.net/",
-		"YouTube": "https://www.youtube.com",
-		"Fabric ModLoader": "https://fabricmc.net/",
-		"Quilt ModLoader": "https://quiltmc.org/en/",
-		"W3Schools": "https://www.w3schools.com/",
-		"Prettier": "https://prettier.io/",
-		"Boxy's Computer Things": "https://boxyplayz.github.io/computers/",
-		"Lazybones CSS": "https://boxyplayz.github.io/lazybones/",
-		"Klassroom by Boxy": "https://github.com/BoxyPlayz/Klassroom",
-		"Rolldown": "https://rolldown.rs/",
-		"Pizza Hut": "https://www.pizzahut.com/",
-		"Astro JS": "https://astro.build/",
-		"React Router": "https://reactrouter.com/",
-		"React Native": "https://reactnative.dev/",
-		"React JS": "https://react.dev/",
-		"Preact JS": "https://preactjs.com/",
-		"Solid JS": "https://www.solidjs.com/",
-		"NPM": "https://npmjs.org",
-		"Auth JS": "https://authjs.dev/",
-		"PostgreSQL": "https://www.postgresql.org/",
-		"MongoDB": "https://www.mongodb.com/",
-		"SQLite": "https://sqlite.org/",
-		"Kysely": "https://kysely.dev/",
-		"Ubuntu Linux": "https://ubuntu.com/",
-		"Visual Studio Code": "https://code.visualstudio.com/",
-		"Visual Studio": "https://visualstudio.microsoft.com/",
-		"Zed": "https://zed.dev/",
-		"Rust": "https://rust-lang.org/",
-		"Vim": "https://www.vim.org/",
-		"Neovim": "https://neovim.io/",
-		"Paint.NET": "https://www.getpaint.net/",
-		"MySQL": "https://www.mysql.com/",
-		"Redis": "https://redis.io/",
-		"Docker": "https://www.docker.com/",
-		"Kubernetes": "https://kubernetes.io/",
-		"Debian Linux": "https://www.debian.org/",
-		"Puppy Linux": "https://puppylinux-woof-ce.github.io/",
-		"Jupyter": "https://jupyter.org/",
-		"Python": "https://www.python.org/",
-		"Wikipedia": "https://www.wikipedia.org/",
-		"Bootstrap": "https://getbootstrap.com/",
-		"Blockbench": "https://www.blockbench.net/",
-		"Nano": "https://www.nano-editor.org/",
-		"Notepad++": "https://notepad-plus-plus.org/",
-		"Arch Linux": "https://archlinux.org/",
-		"Linux Mint": "https://linuxmint.com/",
-		"Google Docs": "https://docs.google.com/document",
-		"Google Slides": "https://docs.google.com/presentation",
-		"Google Sheets": "https://docs.google.com/spreadsheets",
-		"Google Forms": "https://docs.google.com/forms",
-		"LebreOffice": "https://www.libreoffice.org/",
-		"OpenOffice": "https://www.openoffice.org/",
-		"Zorin Linux": "https://zorin.com/os/",
-		"PopOS Linux": "https://system76.com/pop/",
-		"Fedora Linux": "https://www.fedoraproject.org/",
-		"GNOME Desktop": "https://www.gnome.org/",
-		"KDE Desktop": "https://kde.org/",
-		"Budgie Desktop": "https://buddiesofbudgie.org/",
-		"Windows 11": "https://www.microsoft.com/en-us/software-download/windows11",
-		"Windows 10": "https://www.microsoft.com/en-us/software-download/windows10",
-		"Google Classroom": "https://classroom.google.com/",
-		"Sweden": "https://sweden.se/",
-		"Finland": "https://finland.fi/",
-		"France": "https://www.france.fr/",
-		"i18next": "https://www.i18next.com/",
-		"minecraft-launcher-lib": "https://minecraft-launcher-lib.readthedocs.io/en/stable/",
-		"Go": "https://go.dev/",
-		"C++": "https://cplusplus.com/",
-		"Godot": "https://godotengine.org/",
-		"Unreal Engine": "https://www.unrealengine.com/en-US",
-		"Pygame": "https://www.pygame.org/",
-		"Vite PWA": "https://vite-pwa-org.netlify.app/",
-		"GDK": "https://learn.microsoft.com/en-us/gaming/gdk/",
-		"TypeORM": "https://typeorm.io/",
-		"Prodigy": "https://play.prodigygame.com/",
-		"Postgres Lite": "https://pglite.dev/",
-		"Linux": "https://www.linux.org/",
-		"Poland": "https://www.gov.pl/",
-		"USA": "https://www.usa.gov/",
-		"The British": "https://www.gov.uk/",
-		"SETI": "https://www.seti.org/",
-		"Rusticraft": "https://rusticraft.github.io/",
-		"DistroChooser": "https://distrochooser.de/",
-		"Germany": "https://www.deutschland.de/en",
-		"Japan": "https://www.japan.go.jp/",
-		"StackOverflow": "https://stackoverflow.com/",
-		"Prisma ORM": "https://www.prisma.io/",
-		"Drizzle ORM": "https://orm.drizzle.team/",
-		"Sequelize ORM": "https://sequelize.org/",
-		"Git": "https://git-scm.com/"
-	}
+	"searches": [
+		{
+			"name": "Google",
+			"url": "https://www.google.com/"
+		},
+		{
+			"name": "Better Auth",
+			"url": "https://www.better-auth.com/"
+		},
+		{
+			"name": "Github",
+			"url": "https://github.com/"
+		},
+		{
+			"name": "Vite",
+			"url": "https://vite.dev/"
+		},
+		{
+			"name": "Next JS",
+			"url": "https://nextjs.org/"
+		},
+		{
+			"name": "JS Paint",
+			"url": "https://jspaint.app/"
+		},
+		{
+			"name": "Express JS",
+			"url": "https://expressjs.com/"
+		},
+		{
+			"name": "TypeScript",
+			"url": "https://www.typescriptlang.org/"
+		},
+		{
+			"name": "Neoforged ModLoader",
+			"url": "https://neoforged.net/"
+		},
+		{
+			"name": "YouTube",
+			"url": "https://www.youtube.com"
+		},
+		{
+			"name": "Fabric ModLoader",
+			"url": "https://fabricmc.net/"
+		},
+		{
+			"name": "Quilt ModLoader",
+			"url": "https://quiltmc.org/en/"
+		},
+		{
+			"name": "W3Schools",
+			"url": "https://www.w3schools.com/"
+		},
+		{
+			"name": "Prettier",
+			"url": "https://prettier.io/"
+		},
+		{
+			"name": "Boxy's Computer Things",
+			"url": "https://boxyplayz.github.io/computers/"
+		},
+		{
+			"name": "Lazybones CSS",
+			"url": "https://boxyplayz.github.io/lazybones/"
+		},
+		{
+			"name": "Klassroom by Boxy",
+			"url": "https://github.com/BoxyPlayz/Klassroom"
+		},
+		{
+			"name": "Rolldown",
+			"url": "https://rolldown.rs/"
+		},
+		{
+			"name": "Pizza Hut",
+			"url": "https://www.pizzahut.com/"
+		},
+		{
+			"name": "Astro JS",
+			"url": "https://astro.build/"
+		},
+		{
+			"name": "React Router",
+			"url": "https://reactrouter.com/"
+		},
+		{
+			"name": "React Native",
+			"url": "https://reactnative.dev/"
+		},
+		{
+			"name": "React JS",
+			"url": "https://react.dev/"
+		},
+		{
+			"name": "Preact JS",
+			"url": "https://preactjs.com/"
+		},
+		{
+			"name": "Solid JS",
+			"url": "https://www.solidjs.com/"
+		},
+		{
+			"name": "NPM",
+			"url": "https://npmjs.org"
+		},
+		{
+			"name": "Auth JS",
+			"url": "https://authjs.dev/"
+		},
+		{
+			"name": "PostgreSQL",
+			"url": "https://www.postgresql.org/"
+		},
+		{
+			"name": "MongoDB",
+			"url": "https://www.mongodb.com/"
+		},
+		{
+			"name": "SQLite",
+			"url": "https://sqlite.org/"
+		},
+		{
+			"name": "Kysely",
+			"url": "https://kysely.dev/"
+		},
+		{
+			"name": "Ubuntu Linux",
+			"url": "https://ubuntu.com/"
+		},
+		{
+			"name": "Visual Studio Code",
+			"url": "https://code.visualstudio.com/"
+		},
+		{
+			"name": "Visual Studio",
+			"url": "https://visualstudio.microsoft.com/"
+		},
+		{
+			"name": "Zed",
+			"url": "https://zed.dev/"
+		},
+		{
+			"name": "Rust",
+			"url": "https://rust-lang.org/"
+		},
+		{
+			"name": "Vim",
+			"url": "https://www.vim.org/"
+		},
+		{
+			"name": "Neovim",
+			"url": "https://neovim.io/"
+		},
+		{
+			"name": "Paint.NET",
+			"url": "https://www.getpaint.net/"
+		},
+		{
+			"name": "MySQL",
+			"url": "https://www.mysql.com/"
+		},
+		{
+			"name": "Redis",
+			"url": "https://redis.io/"
+		},
+		{
+			"name": "Docker",
+			"url": "https://www.docker.com/"
+		},
+		{
+			"name": "Kubernetes",
+			"url": "https://kubernetes.io/"
+		},
+		{
+			"name": "Debian Linux",
+			"url": "https://www.debian.org/"
+		},
+		{
+			"name": "Puppy Linux",
+			"url": "https://puppylinux-woof-ce.github.io/"
+		},
+		{
+			"name": "Jupyter",
+			"url": "https://jupyter.org/"
+		},
+		{
+			"name": "Python",
+			"url": "https://www.python.org/"
+		},
+		{
+			"name": "Wikipedia",
+			"url": "https://www.wikipedia.org/"
+		},
+		{
+			"name": "Bootstrap",
+			"url": "https://getbootstrap.com/"
+		},
+		{
+			"name": "Blockbench",
+			"url": "https://www.blockbench.net/"
+		},
+		{
+			"name": "Nano",
+			"url": "https://www.nano-editor.org/"
+		},
+		{
+			"name": "Notepad++",
+			"url": "https://notepad-plus-plus.org/"
+		},
+		{
+			"name": "Arch Linux",
+			"url": "https://archlinux.org/"
+		},
+		{
+			"name": "Linux Mint",
+			"url": "https://linuxmint.com/"
+		},
+		{
+			"name": "Google Docs",
+			"url": "https://docs.google.com/document"
+		},
+		{
+			"name": "Google Slides",
+			"url": "https://docs.google.com/presentation"
+		},
+		{
+			"name": "Google Sheets",
+			"url": "https://docs.google.com/spreadsheets"
+		},
+		{
+			"name": "Google Forms",
+			"url": "https://docs.google.com/forms"
+		},
+		{
+			"name": "LibreOffice",
+			"url": "https://www.libreoffice.org/"
+		},
+		{
+			"name": "OpenOffice",
+			"url": "https://www.openoffice.org/"
+		},
+		{
+			"name": "Zorin Linux",
+			"url": "https://zorin.com/os/"
+		},
+		{
+			"name": "PopOS Linux",
+			"url": "https://system76.com/pop/"
+		},
+		{
+			"name": "Fedora Linux",
+			"url": "https://www.fedoraproject.org/"
+		},
+		{
+			"name": "GNOME Desktop",
+			"url": "https://www.gnome.org/"
+		},
+		{
+			"name": "KDE Desktop",
+			"url": "https://kde.org/"
+		},
+		{
+			"name": "Budgie Desktop",
+			"url": "https://buddiesofbudgie.org/"
+		},
+		{
+			"name": "Windows 11",
+			"url": "https://www.microsoft.com/en-us/software-download/windows11"
+		},
+		{
+			"name": "Windows 10",
+			"url": "https://www.microsoft.com/en-us/software-download/windows10"
+		},
+		{
+			"name": "Google Classroom",
+			"url": "https://classroom.google.com/"
+		},
+		{
+			"name": "Sweden",
+			"url": "https://sweden.se/"
+		},
+		{
+			"name": "Finland",
+			"url": "https://finland.fi/"
+		},
+		{
+			"name": "France",
+			"url": "https://www.france.fr/"
+		},
+		{
+			"name": "i18next",
+			"url": "https://www.i18next.com/"
+		},
+		{
+			"name": "minecraft-launcher-lib",
+			"url": "https://minecraft-launcher-lib.readthedocs.io/en/stable/"
+		},
+		{
+			"name": "Go",
+			"url": "https://go.dev/"
+		},
+		{
+			"name": "C++",
+			"url": "https://cplusplus.com/"
+		},
+		{
+			"name": "Godot",
+			"url": "https://godotengine.org/"
+		},
+		{
+			"name": "Unreal Engine",
+			"url": "https://www.unrealengine.com/en-US"
+		},
+		{
+			"name": "Pygame",
+			"url": "https://www.pygame.org/"
+		},
+		{
+			"name": "Vite PWA",
+			"url": "https://vite-pwa-org.netlify.app/"
+		},
+		{
+			"name": "GDK",
+			"url": "https://learn.microsoft.com/en-us/gaming/gdk/"
+		},
+		{
+			"name": "TypeORM",
+			"url": "https://typeorm.io/"
+		},
+		{
+			"name": "Prodigy",
+			"url": "https://play.prodigygame.com/"
+		},
+		{
+			"name": "Postgres Lite",
+			"url": "https://pglite.dev/"
+		},
+		{
+			"name": "Linux",
+			"url": "https://www.linux.org/"
+		},
+		{
+			"name": "Poland",
+			"url": "https://www.gov.pl/"
+		},
+		{
+			"name": "USA",
+			"url": "https://www.usa.gov/"
+		},
+		{
+			"name": "The British",
+			"url": "https://www.gov.uk/"
+		},
+		{
+			"name": "SETI",
+			"url": "https://www.seti.org/"
+		},
+		{
+			"name": "Rusticraft",
+			"url": "https://rusticraft.github.io/"
+		},
+		{
+			"name": "DistroChooser",
+			"url": "https://distrochooser.de/"
+		},
+		{
+			"name": "Germany",
+			"url": "https://www.deutschland.de/en"
+		},
+		{
+			"name": "Japan",
+			"url": "https://www.japan.go.jp/"
+		},
+		{
+			"name": "StackOverflow",
+			"url": "https://stackoverflow.com/"
+		},
+		{
+			"name": "Prisma ORM",
+			"url": "https://www.prisma.io/"
+		},
+		{
+			"name": "Drizzle ORM",
+			"url": "https://orm.drizzle.team/"
+		},
+		{
+			"name": "Sequelize ORM",
+			"url": "https://sequelize.org/"
+		},
+		{
+			"name": "Git",
+			"url": "https://git-scm.com/"
+		}
+	]
 }
