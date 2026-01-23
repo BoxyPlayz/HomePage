@@ -10,6 +10,9 @@ type wikiArticles = Record<
 
 const WIKI_TTL = 1000 * 60 * 60;
 
+/**
+* @deprecated Wikipedia will be replaced soon.
+*/
 const Wikipedia = ({ title }: { title: string }) => {
 	const [content, setContent] = useState<string | null>(null);
 	const [error, setError] = useState<string | null>(null);
