@@ -84,6 +84,13 @@ export default defineConfig({
 				globPatterns: ['**/*.{js,css,html,svg,png,ico,txt,json}'],
 				cleanupOutdatedCaches: true,
 				clientsClaim: true,
+				runtimeCaching: [{
+					'handler': "CacheFirst",
+					'urlPattern': /.*/,
+					'options': {
+						'cacheName': 'homepage-cache-box26'
+					}
+				}]
 			},
 			devOptions: {
 				enabled: false,
