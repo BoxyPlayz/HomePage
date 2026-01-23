@@ -72,7 +72,7 @@ export default defineConfig({
 	plugins: [
 		preact(),
 		VitePWA({
-			registerType: 'prompt',
+			registerType: 'autoUpdate',
 			injectRegister: 'auto',
 			pwaAssets: { disabled: false, config: true },
 			manifest: {
