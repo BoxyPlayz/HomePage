@@ -1,21 +1,25 @@
-import { useContext, useEffect, useMemo, useState } from 'preact/hooks';
+import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import searchyImg from '@/assets/searchy.png';
 import { SearchyContext } from '@/contexts/searchyContext';
 import SearchyData from './searchy.json';
 import './styles.css';
 
 interface Searchy {
-	searches: {name: string; url: string}[];
+	searches: SearchySearch[];
 }
 
-interface SearchyResult {
+interface SearchySearch {
 	name: string;
 	url: string;
+	info?: string;
 }
 
 export default function Searchy() {
 	const [search, setSearch] = useState<string>('');
-	const [sortedResults, setSortedResults] = useState<SearchyResult[]>([]);
+	const [sortedResults, setSortedResults] = useState<SearchySearch[]>([]);
+	const dialogRef = useRef<HTMLDialogElement>(null);
+	const [dialogTitle, setDialogTitle] = useState<string>(null);
+	const [dialogInfo, setDialogInfo] = useState<string>(null);
 	const ctx = useContext(SearchyContext);
 	if (!ctx) throw new Error('SearchyContext missing');
 
@@ -26,9 +30,11 @@ export default function Searchy() {
 			try {
 				const data: Searchy = SearchyData;
 				setSortedResults(
-					data.searches.sort((a, b) => a.name.localeCompare(b.name, undefined, {
-						sensitivity: 'base'
-					}))
+					data.searches.sort((a, b) =>
+						a.name.localeCompare(b.name, undefined, {
+							sensitivity: 'base',
+						})
+					)
 				);
 			} catch (err) {
 				console.error(err);
@@ -63,6 +69,16 @@ export default function Searchy() {
 
 	return (
 		<div>
+			<dialog ref={dialogRef}>
+				<h1>{dialogTitle}</h1>
+				<p>{dialogInfo}</p>
+				<button
+					onClick={() => {
+						dialogRef.current.close();
+					}}>
+					Close
+				</button>
+			</dialog>
 			<h1>Searchy </h1>
 			<img
 				width={40}
@@ -91,6 +107,16 @@ export default function Searchy() {
 							href={result.url}>
 							{result.name}
 						</a>
+						{result.info ?
+							<button
+								onClick={() => {
+									setDialogTitle(result.name);
+									setDialogInfo(result.info);
+									dialogRef.current.showModal();
+								}}>
+								Quick Info
+							</button>
+						:	null}
 					</li>
 				))}
 			</ul>
