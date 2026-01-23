@@ -3,16 +3,24 @@ import { useContext } from 'preact/hooks';
 import emptyImg from '@/assets/empty.png';
 import searchyImg from '@/assets/searchy.png';
 import SplashText from '@/components/SplashText/index.tsx';
+import { IdiotContext } from '@/contexts/idiotContext';
 import { SearchyContext } from '@/contexts/searchyContext';
 import { addBase, get_base_url } from '@/utils.ts';
 
 export default function Header() {
-	const ctx = useContext(SearchyContext);
+	const searchyCtx = useContext(SearchyContext);
 	let searchy: boolean;
-	if (ctx) {
-		searchy = ctx.searchy;
+	if (searchyCtx) {
+		searchy = searchyCtx.searchy;
 	} else {
 		searchy = true;
+	}
+	const idiotCtx = useContext(IdiotContext);
+	let idiot: boolean;
+	if (idiotCtx) {
+		idiot = idiotCtx.idiot;
+	} else {
+		idiot = true;
 	}
 
 	const { url } = useLocation();
@@ -20,6 +28,9 @@ export default function Header() {
 	return (
 		<header>
 			<nav>
+				{idiot ?
+					<label>Certified Idiot</label>
+				:	null}
 				<a
 					href={get_base_url()}
 					className={url == get_base_url() && 'active'}>
@@ -43,6 +54,7 @@ export default function Header() {
 						/>
 					</a>
 				:	null}
+
 				<SplashText />
 			</nav>
 		</header>

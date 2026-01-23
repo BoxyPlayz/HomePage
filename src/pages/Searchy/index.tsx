@@ -1,5 +1,6 @@
 import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import searchyImg from '@/assets/searchy.png';
+import { IdiotContext } from '@/contexts/idiotContext';
 import { SearchyContext } from '@/contexts/searchyContext';
 import SearchyData from './searchy.json';
 import './styles.css';
@@ -22,8 +23,11 @@ export default function Searchy() {
 	const [dialogInfo, setDialogInfo] = useState<string>(null);
 	const ctx = useContext(SearchyContext);
 	if (!ctx) throw new Error('SearchyContext missing');
+	const idiotCtx = useContext(IdiotContext);
+	if (!idiotCtx) throw new Error('SearchyContext missing');
 
 	const { searchy, setSearchy } = ctx;
+	const idiot = idiotCtx;
 
 	useEffect(() => {
 		const fetchSearches = async () => {
@@ -99,6 +103,17 @@ export default function Searchy() {
 				}}
 			/>
 			<ul>
+				<li key='swearing'>
+					<button
+						onClick={() => {
+							alert(
+								"Wow. You're a certified idiot. I'll add that to the top to help you remember."
+							);
+							idiot.setIdiot(true);
+						}}>
+						FREE CHATGPT UNBLOCKED 100%
+					</button>
+				</li>
 				{filteredResults.map((result) => (
 					<li key={result.url}>
 						<a
