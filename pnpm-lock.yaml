@@ -27,8 +27,8 @@ importers:
                                 version: '@preact/compat@18.3.1(preact@10.28.2)'
                 devDependencies:
                         '@boxyplayz/prettier-config':
-                                specifier: ^1.0.0
-                                version: 1.0.0(prettier@3.8.1)
+                                specifier: ^1.0.1
+                                version: 1.0.1
                         '@eslint/js':
                                 specifier: ^9.39.2
                                 version: 9.39.2
@@ -152,10 +152,10 @@ packages:
                 peerDependencies:
                         '@babel/core': ^7.0.0
 
-        '@babel/helper-define-polyfill-provider@0.6.5':
+        '@babel/helper-define-polyfill-provider@0.6.6':
                 resolution:
                         {
-                                integrity: sha512-uJnGFcPsWQK8fvjgGP5LZUZZsYGIoPeRjSF5PGwrelYgq7Q15/Ft9NGFp1zglwgIv//W0uG4BevRuSJRyylZPg==,
+                                integrity: sha512-mOAsxeeKkUKayvZR3HeTYD/fICpCPLJrU5ZjelT/PA6WHtNDBOE436YiaEUvHN454bRM3CebhDsIpieCc4texA==,
                         }
                 peerDependencies:
                         '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
@@ -892,13 +892,11 @@ packages:
                         }
                 engines: { node: '>=6.9.0' }
 
-        '@boxyplayz/prettier-config@1.0.0':
+        '@boxyplayz/prettier-config@1.0.1':
                 resolution:
                         {
-                                integrity: sha512-LX/sps0Q7fvWal6wsDc35hW4PAxDvRjF4bVHx6aX1oN2CDxN9f1osiyc4y0m53C+oeZpnlIeTnb92xlVeC3kkw==,
+                                integrity: sha512-nAY+nrnTZTWm7Skg/62kj0cAczdajeZ2XrEm75McJpcErjX6kP8VSURqb03gU0WQN/FnB7ieQu21VhnV9uyBaA==,
                         }
-                peerDependencies:
-                        prettier: ^3.7.4
 
         '@canvas/image-data@1.1.0':
                 resolution:
@@ -1677,6 +1675,12 @@ packages:
                                 integrity: sha512-7xdrMX0Wk7grrTZQwAoy1GkvPMFoizStUoL+VmtUkAxegbCCec+3FKwOM6yc/uGU5+BEczQHXAlWiqvM8JeENg==,
                         }
 
+        '@mdn/browser-compat-data@6.1.5':
+                resolution:
+                        {
+                                integrity: sha512-PzdZZzRhcXvKB0begee28n5lvwAcinGKYuLZOVxHAZm+n7y01ddEGfdS1ZXRuVcV+ndG6mSEAE8vgudom5UjYg==,
+                        }
+
         '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
                 resolution:
                         {
@@ -2308,10 +2312,10 @@ packages:
                         }
                 engines: { node: '>= 0.4' }
 
-        babel-plugin-polyfill-corejs2@0.4.14:
+        babel-plugin-polyfill-corejs2@0.4.15:
                 resolution:
                         {
-                                integrity: sha512-Co2Y9wX854ts6U8gAAPXfn0GmAyctHuK8n0Yhfjd6t30g7yvKjspvvOo9yG+z52PZRgFErt7Ka2pYnXCjLKEpg==,
+                                integrity: sha512-hR3GwrRwHUfYwGfrisXPIDP3JcYfBrW7wKE7+Au6wDYl7fm/ka1NEII6kORzxNU556JjfidZeBsO10kYvtV1aw==,
                         }
                 peerDependencies:
                         '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
@@ -2324,10 +2328,10 @@ packages:
                 peerDependencies:
                         '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-        babel-plugin-polyfill-regenerator@0.6.5:
+        babel-plugin-polyfill-regenerator@0.6.6:
                 resolution:
                         {
-                                integrity: sha512-ISqQ2frbiNU9vIJkzg7dlPpznPZ4jOiUQ1uSmB0fEHeowtN3COYRsXr/xexn64NpU13P06jc/L5TgiJXOgrbEg==,
+                                integrity: sha512-hYm+XLYRMvupxiQzrvXUj7YyvFFVfv5gI0R71AJzudg1g2AI2vyCPPIFEBjk162/wFzti3inBHo7isWFuEVS/A==,
                         }
                 peerDependencies:
                         '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
@@ -2346,10 +2350,10 @@ packages:
                                 integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==,
                         }
 
-        baseline-browser-mapping@2.9.17:
+        baseline-browser-mapping@2.9.18:
                 resolution:
                         {
-                                integrity: sha512-agD0MgJFUP/4nvjqzIB29zRPUuCF7Ge6mEv9s8dHrtYD7QWXRcx75rOADE/d5ah1NI+0vkDl0yorDd5U852IQQ==,
+                                integrity: sha512-e23vBV1ZLfjb9apvfPk4rHVu2ry6RIr2Wfs+O324okSidrX7pTAnEJPCh/O5BtRlr7QtZI7ktOP3vsqr7Z5XoA==,
                         }
                 hasBin: true
 
@@ -2420,10 +2424,10 @@ packages:
                         }
                 engines: { node: '>=6' }
 
-        caniuse-lite@1.0.30001765:
+        caniuse-lite@1.0.30001766:
                 resolution:
                         {
-                                integrity: sha512-LWcNtSyZrakjECqmpP4qdg0MMGdN368D7X8XvvAqOcqMv0RxnlqVKZl2V6/mBR68oYMxOZPLw/gO7DuisMHUvQ==,
+                                integrity: sha512-4C0lfJ0/YPjJQHagaE9x2Elb69CIqEPZeG0anQt9SIvIoOH4a4uaRl73IavyO+0qZh6MDLH//DrXThEYKHkmYA==,
                         }
 
         chalk@4.1.2:
@@ -2677,10 +2681,10 @@ packages:
                 engines: { node: '>=0.10.0' }
                 hasBin: true
 
-        electron-to-chromium@1.5.277:
+        electron-to-chromium@1.5.278:
                 resolution:
                         {
-                                integrity: sha512-wKXFZw4erWmmOz5N/grBoJ2XrNJGDFMu2+W5ACHza5rHtvsqrK4gb6rnLC7XxKB9WlJ+RmyQatuEXmtm86xbnw==,
+                                integrity: sha512-dQ0tM1svDRQOwxnXxm+twlGTjr9Upvt8UFWAgmLsxEzFQxhbti4VwxmMjsDxVC51Zo84swW7FVCXEV+VAkhuPw==,
                         }
 
         emoji-regex@8.0.0:
@@ -2788,10 +2792,10 @@ packages:
                 peerDependencies:
                         eslint: ^8.57.1 || ^9.0.0
 
-        eslint-plugin-compat@6.0.2:
+        eslint-plugin-compat@6.1.0:
                 resolution:
                         {
-                                integrity: sha512-1ME+YfJjmOz1blH0nPZpHgjMGK4kjgEeoYqGCqoBPQ/mGu/dJzdoP0f1C8H2jcWZjzhZjAMccbM/VdXhPORIfA==,
+                                integrity: sha512-xiwHz7mj6+Zj7NWOO/uaWdrQ6zP0zL5CPyKVCNlB4JaoUFeYPYwejf5toqyHGlXzhuPUdCpg31uBRiWqcgiS0A==,
                         }
                 engines: { node: '>=18.x' }
                 peerDependencies:
@@ -3755,10 +3759,10 @@ packages:
                                 integrity: sha512-4u1FkSBfSRC6hs0MOLj8joGZruGejQR9hyRwh8wLnQULoSosZlqf2gKWB3WEjj4wl3XhFBjFpdUa8SXYe9bauQ==,
                         }
 
-        lru-cache@11.2.4:
+        lru-cache@11.2.5:
                 resolution:
                         {
-                                integrity: sha512-B5Y16Jr9LB9dHVkh6ZevG+vAbOsNOYCX+sXvFWFu7B3Iz5mijW3zdbMyhsh8ANd2mSWBYdJgnqi+mL7/LrOPYg==,
+                                integrity: sha512-vFrFJkWtJvJnD5hg+hJvVE8Lh/TcMzKnTgCWmtBipwI5yLX/iX+5UB2tfuyODF5E7k9xEzMdYgGqaSb1c0c5Yw==,
                         }
                 engines: { node: 20 || >=22 }
 
@@ -5034,7 +5038,7 @@ snapshots:
                         regexpu-core: 6.4.0
                         semver: 6.3.1
 
-        '@babel/helper-define-polyfill-provider@0.6.5(@babel/core@7.28.6)':
+        '@babel/helper-define-polyfill-provider@0.6.6(@babel/core@7.28.6)':
                 dependencies:
                         '@babel/core': 7.28.6
                         '@babel/helper-compilation-targets': 7.28.6
@@ -5608,9 +5612,9 @@ snapshots:
                         '@babel/plugin-transform-unicode-regex': 7.27.1(@babel/core@7.28.6)
                         '@babel/plugin-transform-unicode-sets-regex': 7.28.6(@babel/core@7.28.6)
                         '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.28.6)
-                        babel-plugin-polyfill-corejs2: 0.4.14(@babel/core@7.28.6)
+                        babel-plugin-polyfill-corejs2: 0.4.15(@babel/core@7.28.6)
                         babel-plugin-polyfill-corejs3: 0.13.0(@babel/core@7.28.6)
-                        babel-plugin-polyfill-regenerator: 0.6.5(@babel/core@7.28.6)
+                        babel-plugin-polyfill-regenerator: 0.6.6(@babel/core@7.28.6)
                         core-js-compat: 3.48.0
                         semver: 6.3.1
                 transitivePeerDependencies:
@@ -5648,7 +5652,7 @@ snapshots:
                         '@babel/helper-string-parser': 7.27.1
                         '@babel/helper-validator-identifier': 7.28.5
 
-        '@boxyplayz/prettier-config@1.0.0(prettier@3.8.1)':
+        '@boxyplayz/prettier-config@1.0.1':
                 dependencies:
                         '@trivago/prettier-plugin-sort-imports': 6.0.2(prettier@3.8.1)
                         prettier: 3.8.1
@@ -6012,6 +6016,8 @@ snapshots:
                         '@jridgewell/sourcemap-codec': 1.5.5
 
         '@mdn/browser-compat-data@5.7.6': {}
+
+        '@mdn/browser-compat-data@6.1.5': {}
 
         '@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1':
                 dependencies:
@@ -6423,11 +6429,11 @@ snapshots:
                 dependencies:
                         possible-typed-array-names: 1.1.0
 
-        babel-plugin-polyfill-corejs2@0.4.14(@babel/core@7.28.6):
+        babel-plugin-polyfill-corejs2@0.4.15(@babel/core@7.28.6):
                 dependencies:
                         '@babel/compat-data': 7.28.6
                         '@babel/core': 7.28.6
-                        '@babel/helper-define-polyfill-provider': 0.6.5(@babel/core@7.28.6)
+                        '@babel/helper-define-polyfill-provider': 0.6.6(@babel/core@7.28.6)
                         semver: 6.3.1
                 transitivePeerDependencies:
                         - supports-color
@@ -6435,15 +6441,15 @@ snapshots:
         babel-plugin-polyfill-corejs3@0.13.0(@babel/core@7.28.6):
                 dependencies:
                         '@babel/core': 7.28.6
-                        '@babel/helper-define-polyfill-provider': 0.6.5(@babel/core@7.28.6)
+                        '@babel/helper-define-polyfill-provider': 0.6.6(@babel/core@7.28.6)
                         core-js-compat: 3.48.0
                 transitivePeerDependencies:
                         - supports-color
 
-        babel-plugin-polyfill-regenerator@0.6.5(@babel/core@7.28.6):
+        babel-plugin-polyfill-regenerator@0.6.6(@babel/core@7.28.6):
                 dependencies:
                         '@babel/core': 7.28.6
-                        '@babel/helper-define-polyfill-provider': 0.6.5(@babel/core@7.28.6)
+                        '@babel/helper-define-polyfill-provider': 0.6.6(@babel/core@7.28.6)
                 transitivePeerDependencies:
                         - supports-color
 
@@ -6453,7 +6459,7 @@ snapshots:
 
         balanced-match@1.0.2: {}
 
-        baseline-browser-mapping@2.9.17: {}
+        baseline-browser-mapping@2.9.18: {}
 
         boolbase@1.0.0: {}
 
@@ -6468,9 +6474,9 @@ snapshots:
 
         browserslist@4.28.1:
                 dependencies:
-                        baseline-browser-mapping: 2.9.17
-                        caniuse-lite: 1.0.30001765
-                        electron-to-chromium: 1.5.277
+                        baseline-browser-mapping: 2.9.18
+                        caniuse-lite: 1.0.30001766
+                        electron-to-chromium: 1.5.278
                         node-releases: 2.0.27
                         update-browserslist-db: 1.2.3(browserslist@4.28.1)
 
@@ -6497,7 +6503,7 @@ snapshots:
 
         callsites@3.1.0: {}
 
-        caniuse-lite@1.0.30001765: {}
+        caniuse-lite@1.0.30001766: {}
 
         chalk@4.1.2:
                 dependencies:
@@ -6643,7 +6649,7 @@ snapshots:
                 dependencies:
                         jake: 10.9.4
 
-        electron-to-chromium@1.5.277: {}
+        electron-to-chromium@1.5.278: {}
 
         emoji-regex@8.0.0: {}
 
@@ -6793,19 +6799,19 @@ snapshots:
                         '@babel/plugin-syntax-jsx': 7.28.6(@babel/core@7.28.6)
                         '@eslint/js': 9.39.2
                         eslint: 9.39.2(jiti@2.6.1)
-                        eslint-plugin-compat: 6.0.2(eslint@9.39.2(jiti@2.6.1))
+                        eslint-plugin-compat: 6.1.0(eslint@9.39.2(jiti@2.6.1))
                         eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
                         eslint-plugin-react-hooks: 5.2.0(eslint@9.39.2(jiti@2.6.1))
                         globals: 16.5.0
                 transitivePeerDependencies:
                         - supports-color
 
-        eslint-plugin-compat@6.0.2(eslint@9.39.2(jiti@2.6.1)):
+        eslint-plugin-compat@6.1.0(eslint@9.39.2(jiti@2.6.1)):
                 dependencies:
-                        '@mdn/browser-compat-data': 5.7.6
+                        '@mdn/browser-compat-data': 6.1.5
                         ast-metadata-inferer: 0.8.1
                         browserslist: 4.28.1
-                        caniuse-lite: 1.0.30001765
+                        caniuse-lite: 1.0.30001766
                         eslint: 9.39.2(jiti@2.6.1)
                         find-up: 5.0.0
                         globals: 15.15.0
@@ -7353,7 +7359,7 @@ snapshots:
                 dependencies:
                         tslib: 2.8.1
 
-        lru-cache@11.2.4: {}
+        lru-cache@11.2.5: {}
 
         lru-cache@5.1.1:
                 dependencies:
@@ -7483,7 +7489,7 @@ snapshots:
 
         path-scurry@2.0.1:
                 dependencies:
-                        lru-cache: 11.2.4
+                        lru-cache: 11.2.5
                         minipass: 7.1.2
 
         picocolors@1.1.1: {}

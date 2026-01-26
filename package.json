@@ -22,7 +22,7 @@
 		"react-dom": "npm:@preact/compat@^18.3.1"
 	},
 	"devDependencies": {
-		"@boxyplayz/prettier-config": "^1.0.0",
+		"@boxyplayz/prettier-config": "^1.0.1",
 		"@eslint/js": "^9.39.2",
 		"@preact/preset-vite": "^2.10.2",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
