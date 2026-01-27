@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@boxyplayz/prettier-config": "^1.0.1",
 		"@eslint/js": "^9.39.2",
-		"@preact/preset-vite": "^2.10.2",
+		"@preact/preset-vite": "^2.10.3",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@vite-pwa/assets-generator": "^1.0.2",
 		"eslint": "^9.39.2",
