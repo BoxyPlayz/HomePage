@@ -11,7 +11,10 @@ const Dictionary = ({ word }: { word: string }) => {
 	const searchRef = useRef<HTMLInputElement>(null);
 
 	const handleSearch = () => {
-		const value = searchRef.current.value;
+		const value = searchRef.current.value.trim();
+		if (value = "mar10") {
+			confirm("3 days until mario is going to steal your liver")
+		}
 		if (value) {
 			setSearchTerm(value);
 		}
