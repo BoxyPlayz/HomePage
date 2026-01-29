@@ -12,8 +12,8 @@ const Dictionary = ({ word }: { word: string }) => {
 
 	const handleSearch = () => {
 		const value = searchRef.current.value;
-		if (value = "mar10") {
-			alert("3 days until mario is going to steal your liver")
+		if (value == 'mar10') {
+			confirm('3 days until mario is going to steal your liver');
 		}
 		if (value) {
 			setSearchTerm(value);
