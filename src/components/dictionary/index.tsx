@@ -13,7 +13,10 @@ const Dictionary = ({ word }: { word: string }) => {
 	const handleSearch = () => {
 		const value = searchRef.current.value;
 		if (value.trim().toLowerCase() == 'mar10') {
-			confirm('3 days until mario is going to steal your liver');
+			const mayro = confirm('3 days until mario is going to steal your liver');
+			if (!mayro) {
+				alert('Spaghetti');
+			}
 		}
 		if (value) {
 			setSearchTerm(value);
