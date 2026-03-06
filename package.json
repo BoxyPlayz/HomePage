@@ -27,7 +27,7 @@
 		"@preact/preset-vite": "^2.10.3",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@vite-pwa/assets-generator": "^1.0.2",
-		"eslint": "^9.39.3",
+		"eslint": "^9.39.4",
 		"eslint-config-preact": "^2.0.0",
 		"jiti": "^2.6.1",
 		"prettier": "^3.8.1",
