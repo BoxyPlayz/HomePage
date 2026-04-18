@@ -14,7 +14,6 @@
 		"lint": "eslint --cache . --ext .ts,.tsx"
 	},
 	"dependencies": {
-		"dotenv": "^17.4.2",
 		"lrclib-api": "^2.0.4",
 		"preact": "^10.29.1",
 		"preact-iso": "^2.11.1",
@@ -22,6 +21,7 @@
 		"react-dom": "npm:@preact/compat@^18.3.2"
 	},
 	"devDependencies": {
+		"dotenv": "^17.4.2",
 		"@boxyplayz/prettier-config": "^1.0.1",
 		"@eslint/js": "^10.0.1",
 		"@preact/preset-vite": "^2.10.5",
