@@ -8,63 +8,38 @@ export default defineConfig({
 	base: '/HomePage/',
 	appType: 'spa',
 	build: {
+		license: true,
+		sourcemap: "inline",
+		manifest: true,
+		reportCompressedSize: false,
 		rollupOptions: {
 			input: { main: 'index.html', notfound: '404.html' },
 			output: {
-				manualChunks: function manualChunks(id) {
-					if (id.includes('iso')) {
-						return 'preact-iso';
-					}
-					if (id.includes('compat')) {
-						return 'compat';
-					}
-					if (id.includes('preact')) {
-						return 'preact';
-					}
-					if (id.includes('node_modules')) {
-						return 'vendor';
-					}
-					if (id.includes('hooks')) {
-						return 'hooks';
-					}
-					if (id.includes('cat')) {
-						return 'cat';
-					}
-					if (id.includes('header')) {
-						return 'head';
-					}
-					if (id.includes('dictionary')) {
-						return 'dictionary';
-					}
-					if (id.includes('notes')) {
-						return 'notes';
-					}
-					if (id.includes('wiki')) {
-						return 'wiki';
-					}
-					if (id.includes('lrclib')) {
-						return 'lrclib';
-					}
-					if (id.includes('Splash')) {
-						return 'splash';
-					}
-					if (id.includes('jokes')) {
-						return 'jokes';
-					}
-					if (id.includes('home')) {
-						return 'home';
-					}
-					if (id.includes('searchy')) {
-						return 'searchy';
-					}
-					if (id.includes('settings')) {
-						return 'konfig';
-					}
-					if (id.includes('context')) {
-						return 'context';
-					}
-
-					return null;
+				codeSplitting: {
+					maxSize: 10000,
+					minSize: 100,
+					groups: [
+						{
+							test: /node_modules/,
+							name: "libs"
+						},
+						{
+							test: /hooks/,
+							name: "hooks"
+						},
+						{
+							test: /pages/,
+							name: "pages"
+						},
+						{
+							test: /components/,
+							name: "components"
+						},
+						{
+							test: /contexts/,
+							name: "contexts"
+						}
+					]
 				},
 			},
 		},
