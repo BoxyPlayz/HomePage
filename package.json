@@ -27,7 +27,7 @@
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@vite-pwa/assets-generator": "^1.0.2",
 		"dotenv": "^17.4.2",
-		"eslint": "^10.2.1",
+		"eslint": "^10.3.0",
 		"eslint-config-preact": "^2.0.0",
 		"jiti": "^2.6.1",
 		"prettier": "^3.8.3",
